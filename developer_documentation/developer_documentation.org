@@ -1,0 +1,57 @@
+* Directory structure
+The root of repo contains
+- mockups :: Contains mockups
+- developer_documentation :: Contains documentation like guidelines including this file
+- src :: The actual source code of the project will be present inside this
+- README.md :: Created by github to be shown as information about repository
+** Organisation of code in src/
+- The file *index.html* will be present here which will be homepage of the site.
+- Each webpage will be present in separate directory in src.
+  eg. src/login_page/login_page.html , src/signup_page/signup_page.html etc. 
+- Each of these page specific directories will contain style.css and main.js to contain page specific style and code.
+  They may also contain assets like images in a directory named assets i.e. src/login_page/assets/example.png
+- There will also be a directory src/global which will contain global files shared by all pages like css, js and other assets
+* Coding guidelines
+** HTML
+- Indentation :: 2 spaces per level
+  #+begin_src html
+<!-- example -->
+<html>
+  <head>
+  </head>
+  <body>
+    <ul>
+      <li>item</li>
+    </ul>
+  </body>
+</html>
+  #+end_src
+- Line breaks ::
+  Try to have code look as it would be in rendered html. Try putting inline elements closing tags on same line.
+   #+begin_src html
+<!-- Note how <a> and <li> are closed on same line -->
+<p>
+  This is a paragraph which contains a <a>link</a>
+</p>
+<ul>
+  <li>one</li>
+  <li>two</li>
+  <li>three</li>
+</ul>
+  
+   #+end_src
+- Comments ::
+  Put comments at places where explaination might be needed. Also put comments to mark sections of code.
+  Comments will stay on their own line before the content it refers to
+   #+begin_src html
+<!-- search result -->
+<div>
+  <img src=...>
+  <p>
+    ...
+  </p>
+  <p>
+    ...
+  </p>
+</div>
+   #+end_src
