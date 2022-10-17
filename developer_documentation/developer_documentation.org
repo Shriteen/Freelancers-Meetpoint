@@ -55,3 +55,9 @@ The root of repo contains
   </p>
 </div>
    #+end_src
+- TODO Comments ::
+  If we have some code which we will need to revisit in future, put a reminder as TODO comment.
+  This could be due to some things waiting for backend.
+   #+begin_src html
+<!-- TODO: Depending upon login status show/hide this section -->
+   #+end_src
