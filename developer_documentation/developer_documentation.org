@@ -1,3 +1,9 @@
+* Table of contents                                                     :TOC:
+- [[#directory-structure][Directory structure]]
+  - [[#organisation-of-code-in-src][Organisation of code in src/]]
+- [[#coding-guidelines][Coding guidelines]]
+  - [[#html][HTML]]
+
 * Directory structure
 The root of repo contains
 - mockups :: Contains mockups
