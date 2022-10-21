@@ -26,7 +26,7 @@
      showgrid="false"
      inkscape:lockguides="true"
      inkscape:zoom="13.455443"
-     inkscape:cx="16.42458"
+     inkscape:cx="16.46174"
      inkscape:cy="16.42458"
      inkscape:window-width="1366"
      inkscape:window-height="699"
@@ -43,9 +43,9 @@
     <g
        id="g549"
        transform="matrix(0.65449382,0,0,0.65449382,-0.18728574,0.34356086)"
-       style="stroke:#000000">
+       style="stroke:#ff0000">
       <ellipse
-         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.661509;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:0.661509;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
          id="path14810"
          cx="6.3868508"
          cy="2.6991503"
@@ -53,7 +53,7 @@
          ry="2.1080258" />
       <path
          id="path14812"
-         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.661509;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:0.661509;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
          d="m 6.402575,5.6110032 c -1.8239859,0.00226 -3.4000145,1.506243 -3.7856097,3.6125501 l 7.3939897,-0.0095 C 9.5506899,7.2214569 8.1507694,5.6110605 6.402575,5.6110032 Z"
          sodipodi:nodetypes="cccc" />
     </g>
