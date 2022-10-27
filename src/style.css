@@ -1,0 +1,93 @@
+.info-quote{
+    padding: 3em 2em;
+}
+
+/* set padding of 2nd quote onwards */
+.info-quote:nth-child(n+2) {
+    margin: 2em 0;
+}
+
+/* styling of text in quote */
+.info-quote p{
+    font-size: 2.4em;
+    max-width: 17em;
+}
+
+/* special styling for quote 1 and 4 */
+#quote1,#quote4{
+    background-color: #2200bb;
+    color: #ffffff;
+}
+#quote1 p{
+    font-size: 3.2em;
+    font-weight: bold;
+    max-width: 12em;
+}
+#quote4 p{
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* links for login and signup */
+#quote1 a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 0.5em 2em;
+    border: 2px solid #ffffff;
+    border-radius: 3em;
+}
+#quote1 a:hover,#quote1 a:focus{
+    text-decoration: underline;
+}
+#quote1 a:first-of-type{
+    margin-left: 10vw;
+    margin-right: 1em;
+}
+
+@media screen and (min-width:1000px){
+
+    .info-quote p{
+	padding-left: 1.5em;
+    }
+    /* 2 of quotes are on right side */
+    .info-quote:nth-child(3n) p{
+	margin: 0 1em 0 auto; 
+    }
+
+    #qoute1 p{
+	max-width: 40vw;
+    }
+
+    /* background images */
+    .info-quote{
+	background-repeat: no-repeat;	
+    }
+    .info-quote:nth-child(3n-1){
+	background-position: right 15% center;
+    }
+    .info-quote:nth-child(3n){
+	background-position: left 15% center;
+    }
+    .info-quote:nth-child(n+2){
+	background-size: contain;
+    }
+    #quote1{
+	background-image: url('assets/logo.png');
+	background-position: left 60vw center;
+    }
+    #quote2{
+	background-image: url('assets/search_clipart.svg');	
+    }
+    #quote3{
+	background-image: url('assets/bright_clipart.svg');	
+    }
+    #quote5{
+	background-image: url('assets/door_clipart.svg');	
+	
+    }
+    #quote6{
+	background-image: url('assets/demand_clipart.svg');	
+    }
+
+}
