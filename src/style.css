@@ -1,146 +1,93 @@
-body{
-    margin: 0;
-    font-family: sans-serif;
+.info-quote{
+    padding: 3em 2em;
 }
 
-/* Hide elements with hidden class */
-.hidden{
-    display: none;
+/* set padding of 2nd quote onwards */
+.info-quote:nth-child(n+2) {
+    margin: 2em 0;
 }
 
-header {
+/* styling of text in quote */
+.info-quote p{
+    font-size: 2.4em;
+    max-width: 17em;
+}
+
+/* special styling for quote 1 and 4 */
+#quote1,#quote4{
     background-color: #2200bb;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    color: #ffffff;
+}
+#quote1 p{
+    font-size: 3.2em;
+    font-weight: bold;
+    max-width: 12em;
+}
+#quote4 p{
+    text-align: center;
+    margin: 0 auto;
 }
 
-
-
-/* ================= info button =============== */
-
-button{
-    background: none;                /* normalize */
-}
-
-#account-info-button{
-    display: flex;
-    align-items: center;
-    margin: 0.3rem;
-
-    cursor: pointer;
-    
-    border-radius: 2em;
-    padding: 0.3em;
-}
-
-/* recolor svg images in header to white */
-header img[src$="svg"]{
-    filter: contrast(0) brightness(200);
-}
-
-/* recolour icon and text to cyan when not logged in*/
-#account-info-button.logged-out img[src$="svg"]{
-    filter: hue-rotate(180deg) brightness(200);
-}
-#account-info-button.logged-out p
-{
-    color: #00ffff;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
-/* display hamburger menu icon and hide text if logged in */
-.logged-out #hamburger-icon,
-#account-info-button.logged-in p{
-    display: none;
-}
-
-/* visual styleng of menu button */
-#account-info-profile-pic{
-    border-radius: 2em;
-}
-#account-info-button.logged-in{
-    background-color: rgba(255,255,255,0.5);
-    border: none;
-}
-#account-info-button.logged-out{
-    border: 2px solid #00ffff;
-}
-#account-info-button > *{
-    margin-right:  0.4em;
-}
-
-
-/* ================= hamburger menu =============== */
-#hamburger-menu{
-    /* convert into a popover */
-    position: absolute;
-    right: 0px;
-    top: 50px;
-    width: 13rem;
-    margin: 5px;
-    padding: 0.3rem;
-
-    /* styling of popover */
-    border-radius: 0.5em;
-    box-shadow: 0px 0px 10px #303030;
-    background-color: #f0f0f0;
-
-    color: #303030;
-}
-
-#hamburger-menu img[src$="svg"]{
-    filter: brightness(0);
-}
-
-#hamburger-menu > *{
-    margin: 0.2rem;
-}
-
-#hamburger-menu-header{
-    /* flex layout */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#hamburger-menu-account-name{
-    font-weight: 600;
-    margin: 0.2rem;
-}
-
-
-#hamburger-menu-close{
-    border: none;
-    border-radius: 0.4rem;
-    padding: 0.5em;
-}
-#hamburger-menu-close:hover,.menu-item:hover{
-    background-color: rgba(0,0,0,0.2);
-}
-
-#hamburger-menu ul{
-    /* normalize lists */
-    list-style-type: none;
-    padding: 0.1rem;
-    margin: 0 0.2rem 0.2rem 0.2rem;
-}
-#hamburger-menu a{
-    color: inherit;
+/* links for login and signup */
+#quote1 a{
+    color: #ffffff;
     text-decoration: none;
+    font-size: 1.1em;
+    padding: 0.5em 2em;
+    border: 2px solid #ffffff;
+    border-radius: 3em;
 }
-.menu-item{
-    display: flex;
-    align-items: center;
+#quote1 a:hover,#quote1 a:focus{
+    text-decoration: underline;
+}
+#quote1 a:first-of-type{
+    margin-left: 10vw;
+    margin-right: 1em;
+}
 
-    padding: 0.1rem;
-    border-radius: 0.2rem;
-    margin: 0.2rem;
-}
-.menu-item img{
-    margin-right: 0.8rem;
-}
-#hamburger-menu .menu-item:first-of-type{
-    margin-top: 0px;
+@media screen and (min-width:1000px){
+
+    .info-quote p{
+	padding-left: 1.5em;
+    }
+    /* 2 of quotes are on right side */
+    .info-quote:nth-child(3n) p{
+	margin: 0 1em 0 auto; 
+    }
+
+    #qoute1 p{
+	max-width: 40vw;
+    }
+
+    /* background images */
+    .info-quote{
+	background-repeat: no-repeat;	
+    }
+    .info-quote:nth-child(3n-1){
+	background-position: right 15% center;
+    }
+    .info-quote:nth-child(3n){
+	background-position: left 15% center;
+    }
+    .info-quote:nth-child(n+2){
+	background-size: contain;
+    }
+    #quote1{
+	background-image: url('assets/logo.png');
+	background-position: left 60vw center;
+    }
+    #quote2{
+	background-image: url('assets/search_clipart.svg');	
+    }
+    #quote3{
+	background-image: url('assets/bright_clipart.svg');	
+    }
+    #quote5{
+	background-image: url('assets/door_clipart.svg');	
+	
+    }
+    #quote6{
+	background-image: url('assets/demand_clipart.svg');	
+    }
+
 }
