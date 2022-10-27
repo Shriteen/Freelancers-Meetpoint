@@ -1,0 +1,146 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* Hide elements with hidden class */
+.hidden{
+    display: none;
+}
+
+header {
+    background-color: #2200bb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+/* ================= info button =============== */
+
+button{
+    background: none;                /* normalize */
+}
+
+#account-info-button{
+    display: flex;
+    align-items: center;
+    margin: 0.3rem;
+
+    cursor: pointer;
+    
+    border-radius: 2em;
+    padding: 0.3em;
+}
+
+/* recolor svg images in header to white */
+header img[src$="svg"]{
+    filter: contrast(0) brightness(200);
+}
+
+/* recolour icon and text to cyan when not logged in*/
+#account-info-button.logged-out img[src$="svg"]{
+    filter: hue-rotate(180deg) brightness(200);
+}
+#account-info-button.logged-out p
+{
+    color: #00ffff;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* display hamburger menu icon and hide text if logged in */
+.logged-out #hamburger-icon,
+#account-info-button.logged-in p{
+    display: none;
+}
+
+/* visual styleng of menu button */
+#account-info-profile-pic{
+    border-radius: 2em;
+}
+#account-info-button.logged-in{
+    background-color: rgba(255,255,255,0.5);
+    border: none;
+}
+#account-info-button.logged-out{
+    border: 2px solid #00ffff;
+}
+#account-info-button > *{
+    margin-right:  0.4em;
+}
+
+
+/* ================= hamburger menu =============== */
+#hamburger-menu{
+    /* convert into a popover */
+    position: absolute;
+    right: 0px;
+    top: 50px;
+    width: 13rem;
+    margin: 5px;
+    padding: 0.3rem;
+
+    /* styling of popover */
+    border-radius: 0.5em;
+    box-shadow: 0px 0px 10px #303030;
+    background-color: #f0f0f0;
+
+    color: #303030;
+}
+
+#hamburger-menu img[src$="svg"]{
+    filter: brightness(0);
+}
+
+#hamburger-menu > *{
+    margin: 0.2rem;
+}
+
+#hamburger-menu-header{
+    /* flex layout */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#hamburger-menu-account-name{
+    font-weight: 600;
+    margin: 0.2rem;
+}
+
+
+#hamburger-menu-close{
+    border: none;
+    border-radius: 0.4rem;
+    padding: 0.5em;
+}
+#hamburger-menu-close:hover,.menu-item:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+
+#hamburger-menu ul{
+    /* normalize lists */
+    list-style-type: none;
+    padding: 0.1rem;
+    margin: 0 0.2rem 0.2rem 0.2rem;
+}
+#hamburger-menu a{
+    color: inherit;
+    text-decoration: none;
+}
+.menu-item{
+    display: flex;
+    align-items: center;
+
+    padding: 0.1rem;
+    border-radius: 0.2rem;
+    margin: 0.2rem;
+}
+.menu-item img{
+    margin-right: 0.8rem;
+}
+#hamburger-menu .menu-item:first-of-type{
+    margin-top: 0px;
+}
