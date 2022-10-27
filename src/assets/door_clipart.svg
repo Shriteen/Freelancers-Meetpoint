@@ -2,19 +2,19 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="48"
-   height="48"
-   viewBox="0 0 12.7 12.7"
+   width="300"
+   height="300"
+   viewBox="0 0 79.374998 79.375"
    version="1.1"
-   id="svg5"
+   id="svg7262"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
-   sodipodi:docname="hamburger_menu_icon.svg"
+   sodipodi:docname="door_clipart.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="namedview7"
+     id="namedview7264"
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="6.7277216"
-     inkscape:cx="36.490808"
-     inkscape:cy="15.458428"
+     inkscape:zoom="1.1893044"
+     inkscape:cx="183.30042"
+     inkscape:cy="188.34539"
      inkscape:window-width="1366"
      inkscape:window-height="699"
      inkscape:window-x="0"
@@ -34,34 +34,25 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
-     id="defs2" />
+     id="defs7259" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#ff0000;stroke:none;stroke-width:0.289652;stroke-linecap:round;stroke-dasharray:none"
-       id="rect1052"
-       width="12.7"
-       height="2.25"
-       x="9.5367433e-08"
-       y="5.2249999"
-       ry="1.125" />
-    <rect
-       style="fill:#ff0000;stroke:none;stroke-width:0.289652;stroke-linecap:round;stroke-dasharray:none"
-       id="rect1108"
-       width="12.7"
-       height="2.25"
-       x="2.8610231e-07"
-       y="0.52916664"
-       ry="1.125" />
-    <rect
-       style="fill:#ff0000;stroke:none;stroke-width:0.289652;stroke-linecap:round;stroke-dasharray:none"
-       id="rect1112"
-       width="12.7"
-       height="2.25"
-       x="9.5367433e-08"
-       y="9.9208336"
-       ry="1.125" />
+       style="fill:none;stroke:#ff00ff;stroke-width:6;stroke-linecap:round;stroke-dasharray:none"
+       id="rect7800"
+       width="35.432777"
+       height="73.989685"
+       x="21.971111"
+       y="2.6926575"
+       ry="1.7972771"
+       rx="1.7616473" />
+    <circle
+       style="fill:none;stroke:#ff00ff;stroke-width:2.5;stroke-linecap:round;stroke-dasharray:none"
+       id="path8327"
+       cx="48.615555"
+       cy="38.390671"
+       r="1.3226845" />
   </g>
 </svg>

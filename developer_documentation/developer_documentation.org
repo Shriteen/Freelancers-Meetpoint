@@ -3,6 +3,7 @@
   - [[#organisation-of-code-in-src][Organisation of code in src/]]
 - [[#coding-guidelines][Coding guidelines]]
   - [[#html][HTML]]
+  - [[#css][CSS]]
 
 * Directory structure
 The root of repo contains
@@ -67,3 +68,30 @@ The root of repo contains
    #+begin_src html
 <!-- TODO: Depending upon login status show/hide this section -->
    #+end_src
+** CSS
+- Indentation :: 4 spaces, Opening brace on same line as selector
+  #+begin_src css
+selector{
+    property: value;
+}
+    #+end_src
+- Comments ::
+  Put comments to explain what is being done when its not obvious. Also put comments to mark sections of code.
+  Explaination comments live on same line as property if they explain single property, on their own line if explaining set of properties.
+  Section comments are on their own line outside all the rules.
+  #+begin_src css
+header{
+    /* Set header layout to flexbox */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    background-color: #7042ff;      /*set background color to shade of blue*/
+}
+
+/* Styling for body */
+
+p {
+    ...
+}
+#+end_src

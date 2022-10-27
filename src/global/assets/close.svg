@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="48"
-   height="48"
-   viewBox="0 0 12.7 12.7"
+   width="30"
+   height="30"
+   viewBox="0 0 7.9374998 7.9375"
    version="1.1"
    id="svg5"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
-   sodipodi:docname="hamburger_menu_icon.svg"
+   sodipodi:docname="close.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="6.7277216"
-     inkscape:cx="36.490808"
-     inkscape:cy="15.458428"
+     inkscape:zoom="9.5144352"
+     inkscape:cx="19.969656"
+     inkscape:cy="10.089932"
      inkscape:window-width="1366"
      inkscape:window-height="699"
      inkscape:window-x="0"
@@ -39,29 +39,13 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <rect
-       style="fill:#ff0000;stroke:none;stroke-width:0.289652;stroke-linecap:round;stroke-dasharray:none"
-       id="rect1052"
-       width="12.7"
-       height="2.25"
-       x="9.5367433e-08"
-       y="5.2249999"
-       ry="1.125" />
-    <rect
-       style="fill:#ff0000;stroke:none;stroke-width:0.289652;stroke-linecap:round;stroke-dasharray:none"
-       id="rect1108"
-       width="12.7"
-       height="2.25"
-       x="2.8610231e-07"
-       y="0.52916664"
-       ry="1.125" />
-    <rect
-       style="fill:#ff0000;stroke:none;stroke-width:0.289652;stroke-linecap:round;stroke-dasharray:none"
-       id="rect1112"
-       width="12.7"
-       height="2.25"
-       x="9.5367433e-08"
-       y="9.9208336"
-       ry="1.125" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:1.13393;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 0.56696427,0.56696427 7.3705356,7.3705356"
+       id="path414" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:1.13393;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 0.56696427,7.3705356 7.3705356,0.56696427"
+       id="path1071" />
   </g>
 </svg>
