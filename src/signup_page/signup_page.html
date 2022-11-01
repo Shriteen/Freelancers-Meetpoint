@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Signup - Freelancers-Meetpoint</title>
+    <!-- favicon in tab -->
+    <link href="../global/assets/favicon.png" rel="icon">
+    <link href="../global/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  
+  <body>
+    <!-- Header -->
+    <header>
+      <a href="../index.html">
+	<picture alt="logo">
+	  <source media="(max-width:600px)" srcset="../global/assets/logo_with_name_initials.svg">
+	  <source media="(min-width:601px)" srcset="../global/assets/logo_with_name.svg">
+	  <img src="../global/assets/logo_with_name_initials.svg" height="45px" id="header-logo">
+	</picture>
+      </a>
+    </header>
+    
+    <!-- Content -->
+    <main>
+      
+      <!-- TODO: where to send form data -->
+      <form id="signup-form" action="TODO" method="post">
+	
+	<!-- Common part for employer and freelancer -->
+	<fieldset id="common-signup-data" class="signup-fieldset">
+	  <legend>Enter your Details</legend>
+
+	  <ul>
+	    <li>
+	      <!-- Name -->
+	      <label for="signup-account-name">Name</label>
+	      <input type="text" id="signup-account-name" name="account-name" maxlength="100">
+	    </li>
+	    <li>
+	      <!-- Username -->
+	      <label for="signup-account-username">Pick a Username</label>
+	      <input type="text" id="signup-account-username" name="account-username" maxlength="100">
+	    </li>
+	    <li>
+	      <!-- Email -->
+	      <label for="signup-account-email">Email</label>
+	      <input type="email" id="signup-account-email" name="account-email" maxlength="100">
+	    </li>
+	    <li>
+	      <!-- Password -->
+	      <label for="signup-account-password">Set a Password</label>
+	      <input type="password" id="signup-account-password" name="account-password" maxlength="100">
+	    </li>
+	    <li>
+	      <!-- Confirm Password -->
+	      <label for="signup-account-confirm-password">Confirm Password</label>
+	      <input type="password" id="signup-account-confirm-password" maxlength="100">
+	    </li>
+	    <li>
+	      <!-- Account type -->
+	      <fieldset id="account-type-selector">
+		<legend>You are here to</legend>
+		<input type="radio" id="signup-account-type-employer" name="account-type">
+		<label for="signup-account-type-employer">Find Work</label>
+		<input type="radio" id="signup-account-type-freelancer" name="account-type">
+		<label for="signup-account-type-freelancer">Find Talent</label>
+	      </fieldset>
+	    </li>
+	    <li>
+	      <button type="button" id="signup-account-common-submit-button">Next</button>
+	    </li>
+	  </ul>
+	  
+	</fieldset>
+	
+      </form>
+    </main>
+  </body>
+</html>
