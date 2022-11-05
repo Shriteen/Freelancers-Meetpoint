@@ -23,7 +23,34 @@
     
     <!-- Content -->
     <main>
-      
+      <form id="login-form" action="TODO" method="post">
+        <ul>
+        <li>
+          <input type="radio" id="login-account-type-employer" name="account-type">
+          <label for="login-account-type-employer">Find Work</label>
+	  <input type="radio" id="login-account-type-freelancer" name="account-type">
+	  <label for="login-account-type-freelancer">Find Talent</label>
+        </li>
+
+        <li>
+          <!-- Username -->
+	  <label for="username">Username</label>
+	  <input type="text" id="username" name="account-name" maxlength="100">
+          </li>
+    
+        <li>
+          <!-- Password -->
+	  <label for="password">Password</label>
+	  <input type="password" id="password" name="account-password" maxlength="100">
+        </li>
+
+        <li>
+          <button type="button" id="login-button">Log In</button>
+        </li>
+
+        Don't have an account? <a href="">Sign Up</a>
+        </ul>
+      </form>
     </main>
   </body>
 </html>
