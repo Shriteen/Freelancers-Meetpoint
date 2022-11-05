@@ -35,44 +35,150 @@
 	    <li>
 	      <!-- Name -->
 	      <label for="signup-account-name">Name</label>
-	      <input type="text" id="signup-account-name" name="account-name" maxlength="100">
+	      <input type="text" id="signup-account-name" name="account-name" maxlength="100" required>
 	    </li>
 	    <li>
 	      <!-- Username -->
 	      <label for="signup-account-username">Pick a Username</label>
-	      <input type="text" id="signup-account-username" name="account-username" maxlength="100">
+	      <input type="text" id="signup-account-username" name="account-username" maxlength="100" required>
 	    </li>
 	    <li>
 	      <!-- Email -->
 	      <label for="signup-account-email">Email</label>
-	      <input type="email" id="signup-account-email" name="account-email" maxlength="100">
+	      <input type="email" id="signup-account-email" name="account-email" maxlength="100" required>
 	    </li>
 	    <li>
 	      <!-- Password -->
 	      <label for="signup-account-password">Set a Password</label>
-	      <input type="password" id="signup-account-password" name="account-password" maxlength="100">
+	      <input type="password" id="signup-account-password" name="account-password" maxlength="100" required>
 	    </li>
 	    <li>
 	      <!-- Confirm Password -->
 	      <label for="signup-account-confirm-password">Confirm Password</label>
-	      <input type="password" id="signup-account-confirm-password" maxlength="100">
+	      <input type="password" id="signup-account-confirm-password" maxlength="100" required>
 	    </li>
 	    <li>
 	      <!-- Account type -->
 	      <fieldset id="account-type-selector">
 		<legend>You are here to</legend>
-		<input type="radio" id="signup-account-type-employer" name="account-type">
+		<input type="radio" id="signup-account-type-employer" name="account-type" value="employer" required>
 		<label for="signup-account-type-employer">Find Work</label>
-		<input type="radio" id="signup-account-type-freelancer" name="account-type">
+		<input type="radio" id="signup-account-type-freelancer" name="account-type" value="freelancer" required>
 		<label for="signup-account-type-freelancer">Find Talent</label>
 	      </fieldset>
 	    </li>
 	    <li>
+	      <!-- Submit -->
 	      <button type="button" id="signup-account-common-submit-button">Next</button>
 	    </li>
 	  </ul>
 	  
 	</fieldset>
+
+	<!-- Employer part -->
+	<fieldset id="employer-signup-data" class="signup-fieldset">
+	  <!-- TODO: Insert Name -->
+	  <legend><span class="name-label">TODO</span>, Tell us more about you</legend>
+
+	  <ul>
+	    <li>
+	      <!-- Location -->
+	      <label for="employer-signup-location">Location</label>
+	      <input type="text" id="employer-signup-location" name="account-location" list="location-list" maxlength="100" required>
+	    </li>  
+
+	    <li>
+	      <!-- Profile picture -->
+	      <label for="employer-signup-profile-picture">Profile Picture</label>
+	      <input type="file" id="employer-signup-profile-picture" name="account-profile-picture" accept=".jpg, .jpeg, .png" required>
+	    </li>
+	    
+	    <li>
+	      <button type="submit" class="submit-button" id="employer-submit-button">Start</button>
+	    </li>
+	  </ul>
+	</fieldset>
+
+	<!-- Freelancer part -->
+	<fieldset id="freelancer-signup-data" class="signup-fieldset">
+	  <!-- TODO: Insert Name -->
+	  <legend><span class="name-label">TODO</span>, Tell us more about you</legend>
+
+	  <ul>
+	    <li>
+	      <!-- Profession -->
+	      <label for="freelancer-signup-profession">Profession</label>
+	      <input type="text" id="freelancer-signup-profession" name="account-profession" list="profession-list" maxlength="100" required>
+	    </li>
+
+	    <li>
+	      <!-- Profile picture -->
+	      <label for="freelancer-signup-profile-picture">Profile Picture</label>
+	      <input type="file" id="freelancer-signup-profile-picture" name="account-profile-picture" accept=".jpg, .jpeg, .png" required>
+	    </li>
+
+	    <li>
+	      <!-- Location -->
+	      <label for="freelancer-signup-location">Location</label>
+	      <input type="text" id="freelancer-signup-location" name="account-location" list="location-list" maxlength="100" required>
+	    </li>  
+
+	    <li>
+	      <!-- One line description -->
+	      <label for="freelancer-signup-tagline">Describe Yourself In One Line</label>
+	      <input type="text" id="freelancer-signup-tagline" name="account-tagline" maxlength="250" required>
+	    </li>
+
+	    <li>
+	      <!-- Charges -->
+	      <fieldset id="freelancer-signup-charges">
+		<legend>What Amount Do You Charge Per Hour?</legend>
+		<ul>
+		  <li>
+		    <label for="freelancer-signup-min-charges">Minimum</label>
+		    <input type="number" id="freelancer-signup-min-charges" name="account-min-charges" min="1" required>
+		  </li>
+		  <li>
+		    <label for="freelancer-signup-max-charges">Maximum</label>
+		    <input type="number" id="freelancer-signup-max-charges" name="account-max-charges" min="2" required>
+		    <label id="assurance-label-for-maximum" for="freelancer-signup-max-charges">This is just Expected Maximum Value, we won't be limiting Maximum Charges</label>
+		  </li>
+		</ul>
+	      </fieldset> 
+	    </li>
+
+	    <li>
+	      <!-- Experience -->
+	      <!-- TODO: Add the experience inputs interactively -->
+	      <fieldset id="freelancer-signup-experience">
+		<legend>Showcase Your Experience. Put Up Description, Images And Links Of Your Work And Achievements</legend>
+		<ul id="experience-innput-list">
+		  <!-- Filled interactively using JS -->
+		</ul>
+		<div id="add-experience-buttons">
+		  <button class="add-experience-button" id="add-experience-text" type="button">Describe</button>
+		  <button class="add-experience-button" id="add-experience-url" type="button">Link</button>
+		  <button class="add-experience-button" id="add-experience-file" type="button">Image</button>
+		</div>
+	      </fieldset>
+	    </li>
+	    
+	    <li>
+	      <!-- Submit -->
+	      <button type="submit" class="submit-button" id="freelancer-submit-button">Start</button>
+	    </li>
+	  </ul>
+	  
+	</fieldset>
+
+	<!-- Datalist for location shared between employer and freelancer -->
+	<datalist id="location-list">
+	  <!-- TODO: fill datalist using js -->
+	</datalist>
+	<!-- Datalist for profession used for freelancer -->
+	<datalist id="profession-list">
+	  <!-- TODO: fill datalist using js -->
+	</datalist>
 	
       </form>
     </main>
