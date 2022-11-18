@@ -6,6 +6,7 @@
     <!-- favicon in tab -->
     <link href="../global/assets/favicon.png" rel="icon">
     <link href="../global/style.css" rel="stylesheet">
+    <link href="../global/form_common_styles.css" rel="stylesheet">    
     <link href="style.css" rel="stylesheet">
   </head>
   
@@ -25,7 +26,7 @@
     <main>
       
       <!-- TODO: where to send form data -->
-      <form id="signup-form" action="TODO" method="post">
+      <form id="signup-form" action="TODO" method="post" class="card">
 	
 	<!-- Common part for employer and freelancer -->
 	<fieldset id="common-signup-data" class="signup-fieldset">
@@ -57,11 +58,11 @@
 	      <label for="signup-account-confirm-password">Confirm Password</label>
 	      <input type="password" id="signup-account-confirm-password" maxlength="100" required>
 	    </li>
-	    <li>
+	    <li id="account-type-selector">
 	      <!-- Account type -->
-	      <fieldset id="account-type-selector">
+	      <fieldset id="account-type-selector-fieldset">
 		<legend>You are here to</legend>
-		<input type="radio" id="signup-account-type-employer" name="account-type" value="employer" required>
+		<input type="radio" id="signup-account-type-employer" name="account-type" value="employer" required checked>
 		<label for="signup-account-type-employer">Find Work</label>
 		<input type="radio" id="signup-account-type-freelancer" name="account-type" value="freelancer" required>
 		<label for="signup-account-type-freelancer">Find Talent</label>
@@ -91,6 +92,8 @@
 	      <!-- Profile picture -->
 	      <label for="employer-signup-profile-picture">Profile Picture</label>
 	      <input type="file" id="employer-signup-profile-picture" name="account-profile-picture" accept=".jpg, .jpeg, .png" required>
+	      <!-- TODO: Replace the following label with name of the file using js -->
+	      <label for="employer-signup-profile-picture" class="filepicker-button" id="employer-signup-profile-picture-filepicker-button">Pick a file [ jpg/png ]</label>
 	    </li>
 	    
 	    <li>
@@ -115,6 +118,8 @@
 	      <!-- Profile picture -->
 	      <label for="freelancer-signup-profile-picture">Profile Picture</label>
 	      <input type="file" id="freelancer-signup-profile-picture" name="account-profile-picture" accept=".jpg, .jpeg, .png" required>
+	      <!-- TODO: Replace the following label with name of the file using js -->
+	      <label for="freelancer-signup-profile-picture" class="filepicker-button" id="freelancer-signup-profile-picture-filepicker-button">Pick a file [ jpg/png ]</label>
 	    </li>
 
 	    <li>
@@ -133,23 +138,18 @@
 	      <!-- Charges -->
 	      <fieldset id="freelancer-signup-charges">
 		<legend>What Amount Do You Charge Per Hour?</legend>
-		<ul>
-		  <li>
-		    <label for="freelancer-signup-min-charges">Minimum</label>
-		    <input type="number" id="freelancer-signup-min-charges" name="account-min-charges" min="1" required>
-		  </li>
-		  <li>
-		    <label for="freelancer-signup-max-charges">Maximum</label>
-		    <input type="number" id="freelancer-signup-max-charges" name="account-max-charges" min="2" required>
-		    <label id="assurance-label-for-maximum" for="freelancer-signup-max-charges">This is just Expected Maximum Value, we won't be limiting Maximum Charges</label>
-		  </li>
-		</ul>
+		<label for="freelancer-signup-min-charges">Minimum</label>
+		<input type="number" id="freelancer-signup-min-charges" name="account-min-charges" min="1" required>
+		<label for="freelancer-signup-max-charges">Maximum</label>
+		<input type="number" id="freelancer-signup-max-charges" name="account-max-charges" min="2" required>
+		<label id="assurance-label-for-maximum" for="freelancer-signup-max-charges">This is just Expected Maximum Value, we won't be limiting Maximum Charges</label>
 	      </fieldset> 
 	    </li>
 
 	    <li>
 	      <!-- Experience -->
 	      <!-- TODO: Add the experience inputs interactively -->
+	      <!-- The text and url should have class text-or-link and files should have file -->
 	      <fieldset id="freelancer-signup-experience">
 		<legend>Showcase Your Experience. Put Up Description, Images And Links Of Your Work And Achievements</legend>
 		<ul id="experience-innput-list">

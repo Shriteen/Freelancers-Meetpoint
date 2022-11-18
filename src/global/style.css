@@ -1,6 +1,7 @@
 body{
     margin: 0;
     font-family: sans-serif;
+    background-color: #2200bb;    
 }
 
 /* Hide elements with hidden class */
@@ -143,4 +144,11 @@ header img[src$="svg"]{
 }
 #hamburger-menu .menu-item:first-of-type{
     margin-top: 0px;
+}
+
+/* add common style for cards */
+.card{
+    border-radius: 1em;
+    background-color: #ffffff;
+    box-shadow: 0.5em 0.5em 1em rgba(0,0,0,0.5);
 }

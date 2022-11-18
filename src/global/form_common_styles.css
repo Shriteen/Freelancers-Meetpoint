@@ -1,0 +1,113 @@
+form{
+    /* center */
+    max-width: 30rem;
+    margin: 1em auto;
+
+    /* improve styling */
+    padding: 2em;
+    font-size: 1.25rem;
+}
+
+form ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+} 
+
+/* normalize fieldset styling */
+fieldset{
+    border: none;
+}
+
+/* improve appearance */
+input{
+    border: 0px;
+    background-color: #dfdfdf;
+    color: rgba(0,0,0,0.75);
+    font-size: 1.1rem; 
+    line-height: 1.75rem;
+    border-radius: 0.5em;
+    height: 2.5em;
+    padding: 0 0.5em;
+    width: 100%;
+    box-sizing: border-box;    
+}
+button{
+    border: 0;
+    background-color: #2200bb;
+    color: #ffffff;
+    font-size: 1.35rem;
+    line-height: 1rem;
+    border-radius: 1em;
+    padding: 0.6em 1.25em;
+}
+button:hover{
+    box-shadow: 0px 0px 15px rgba(34,0,187,0.5);
+}
+legend{
+    font-size: 1.3em;
+}
+
+
+
+/* hide disabled fieldsets */
+fieldset[disabled]{
+    display: none;
+}
+
+
+/* center some elements */
+form li,
+#account-type-selector,
+form li:last-of-type {
+    margin: 1rem auto;
+}
+
+/* causes inputs from lists span maximum width */
+fieldset li{
+    margin: 0.5rem 0;
+}
+
+/* style radio buttons differently */
+#account-type-selector input[type="radio"]{
+    display: none;
+}
+#account-type-selector input[type="radio"] + label{
+    border-radius: 1em;
+    padding: 0.25em 1em;
+    margin: 0 0.25em;
+}
+#account-type-selector input[type="radio"]:checked + label{
+    background-color: #2200bb;
+    color: #ffffff;
+}
+#account-type-selector input[type="radio"] + label{
+    display: inline-block;
+    background-color: #dfdfdf;
+    color: #000000;
+}
+
+/* style file input differently */
+input[type="file"]{
+    display: none;
+}
+.filepicker-button{
+    display: inline-block;
+    border: 1px solid rgba(0,0,0,0.5);
+    padding: 0.1em 0.6em;
+    border-radius: 1em;
+}
+
+/* improve visual appearance */
+li label:first-child,
+li legend{
+    color: rgba(0,0,0,0.75);
+    font-size: 0.9em;
+    display: inline-block;
+    margin: 0.1em 1em;
+}
+
+
