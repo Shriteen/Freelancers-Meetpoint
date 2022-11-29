@@ -26,7 +26,7 @@
     <main>
       
       <!-- TODO: where to send form data -->
-      <form id="signup-form" action="TODO" method="post" class="card">
+      <form id="signup-form" action="TODO" method="post" enctype="multipart/form-data" class="card">
 	
 	<!-- Common part for employer and freelancer -->
 	<fieldset id="common-signup-data" class="signup-fieldset">
@@ -62,9 +62,9 @@
 	      <!-- Account type -->
 	      <fieldset id="account-type-selector-fieldset">
 		<legend>You are here to</legend>
-		<input type="radio" id="signup-account-type-employer" name="account-type" value="employer" required checked>
+		<input type="radio" id="signup-account-type-employer" name="account-type" value="freelancer" required checked>
 		<label for="signup-account-type-employer">Find Work</label>
-		<input type="radio" id="signup-account-type-freelancer" name="account-type" value="freelancer" required>
+		<input type="radio" id="signup-account-type-freelancer" name="account-type" value="employer" required>
 		<label for="signup-account-type-freelancer">Find Talent</label>
 	      </fieldset>
 	    </li>
@@ -77,7 +77,7 @@
 	</fieldset>
 
 	<!-- Employer part -->
-	<fieldset id="employer-signup-data" class="signup-fieldset">
+	<fieldset id="employer-signup-data" class="signup-fieldset" disabled>
 	  <!-- TODO: Insert Name -->
 	  <legend><span class="name-label">TODO</span>, Tell us more about you</legend>
 
@@ -103,7 +103,7 @@
 	</fieldset>
 
 	<!-- Freelancer part -->
-	<fieldset id="freelancer-signup-data" class="signup-fieldset">
+	<fieldset id="freelancer-signup-data" class="signup-fieldset" disabled>
 	  <!-- TODO: Insert Name -->
 	  <legend><span class="name-label">TODO</span>, Tell us more about you</legend>
 
