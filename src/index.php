@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__.'global/php/common_libs.php';
+require_once __DIR__.'/global/php/common_libs.php';
 
 $cookiedata= get_from_cookie();
 //if cookies contain anything, verify and redirect
