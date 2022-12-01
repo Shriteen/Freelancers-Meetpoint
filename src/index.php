@@ -1,3 +1,24 @@
+<?php
+
+require_once __DIR__.'/global/php/common_libs.php';
+
+$cookiedata= get_from_cookie();
+//if cookies contain anything, verify and redirect
+if($cookiedata)
+{
+    if(login_authenticate($cookiedata['username'],
+                          $cookiedata['password'],
+                          $cookiedata['type']) )
+    {
+        global $LOGGED_IN,$USERNAME,$ACCOUNT_TYPE;
+        $LOGGED_IN=true;
+        $USERNAME=$cookiedata['username'];
+        $ACCOUNT_TYPE=$cookiedata['type'];
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -54,8 +75,8 @@
 	<p>
 	  A Platform to bring Talent and Talent Seekers at One Place
 	</p>
-	<a href="login_page/login_page.html" class="logged-out">Log In</a>
-	<a href="signup_page/signup_page.html" class="logged-out">Sign Up</a>
+	<a href="login_page/login_page.php" class="logged-out">Log In</a>
+	<a href="signup_page/signup_page.php" class="logged-out">Sign Up</a>
       </div>
       
       <div class="info-quote" id="quote2">

@@ -1,3 +1,39 @@
+<?php
+
+require_once __DIR__.'/../global/php/common_libs.php';
+
+$cookiedata= get_from_cookie();
+//if cookies contain anything, verify and redirect
+if($cookiedata)
+{
+    if(login_authenticate($cookiedata['username'],
+                          $cookiedata['password'],
+                          $cookiedata['type']) )
+    {
+        //redirect
+        switch($cookiedata['type'])
+        {
+        case 'employer':
+            header('Location: ../employer_homepage/employer_homepage.php',true);
+            exit;
+            break;
+        case 'freelancer':
+            header('Location: ../freelancer_homepage/freelancer_homepage.php',true);
+            exit;
+            break;
+        default:
+            die('Invalid account type');
+        }
+    }
+    else
+    {
+        header('Location: ../global/php/logout.php',true);
+        exit;
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,13 +60,13 @@
     
     <!-- Content -->
     <main>
-      <form id="login-form" action="TODO" method="post" class="card">
+      <form id="login-form" action="login_form_handle.php" method="post" class="card">
         <ul>
           <li id="account-type-selector">
-            <input type="radio" id="login-account-type-employer" name="account-type" value="employer" required checked>
+            <input type="radio" id="login-account-type-employer" name="account-type" value="freelancer" required checked>
             <label for="login-account-type-employer">Find Work</label>
 	    <span>or</span>
-	    <input type="radio" id="login-account-type-freelancer" name="account-type" value="freelancer" required>
+	    <input type="radio" id="login-account-type-freelancer" name="account-type" value="employer" required>
 	    <label for="login-account-type-freelancer">Find Talent</label>
           </li>
 
@@ -50,7 +86,7 @@
             <button type="submit" id="login-button">Log In</button>
           </li>
 
-          <a href="../signup_page/signup_page.html">Don't have an account? Sign Up</a>
+          <a href="../signup_page/signup_page.php">Don't have an account? Sign Up</a>
         </ul>
       </form>
     </main>

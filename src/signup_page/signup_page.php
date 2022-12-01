@@ -1,3 +1,39 @@
+<?php
+
+require_once __DIR__.'/../global/php/common_libs.php';
+
+$cookiedata= get_from_cookie();
+//if cookies contain anything, verify and redirect
+if($cookiedata)
+{
+    if(login_authenticate($cookiedata['username'],
+                          $cookiedata['password'],
+                          $cookiedata['type']) )
+    {
+        //redirect
+        switch($cookiedata['type'])
+        {
+        case 'employer':
+            header('Location: ../employer_homepage/employer_homepage.php',true);
+            exit;
+            break;
+        case 'freelancer':
+            header('Location: ../freelancer_homepage/freelancer_homepage.php',true);
+            exit;
+            break;
+        default:
+            die('Invalid account type');
+        }
+    }
+    else
+    {
+        header('Location: ../global/php/logout.php',true);
+        exit;
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -26,8 +62,7 @@
     <!-- Content -->
     <main>
       
-      <!-- TODO: where to send form data -->
-      <form id="signup-form" action="TODO" method="post" enctype="multipart/form-data" class="card">
+      <form id="signup-form" action="signup_form_handle.php" method="post" enctype="multipart/form-data" class="card">
 	
 	<!-- Common part for employer and freelancer -->
 	<fieldset id="common-signup-data" class="signup-fieldset">
