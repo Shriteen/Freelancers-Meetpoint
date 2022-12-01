@@ -8,7 +8,7 @@ setcookie("username",null,0,"/","",true,false);
 setcookie("password",null,0,"/","",true,false);
 setcookie("type",null,0,"/","",true,false);
 
-header('Location: ./../../login_page/login_page.html',true);
+header('Location: ./../../login_page/login_page.php',true);
 exit;
 
 ?>
