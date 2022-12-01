@@ -1,3 +1,24 @@
+<?php
+
+require_once __DIR__.'global/php/common_libs.php';
+
+$cookiedata= get_from_cookie();
+//if cookies contain anything, verify and redirect
+if($cookiedata)
+{
+    if(login_authenticate($cookiedata['username'],
+                          $cookiedata['password'],
+                          $cookiedata['type']) )
+    {
+        global $LOGGED_IN,$USERNAME,$ACCOUNT_TYPE;
+        $LOGGED_IN=true;
+        $USERNAME=$cookiedata['username'];
+        $ACCOUNT_TYPE=$cookiedata['type'];
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
