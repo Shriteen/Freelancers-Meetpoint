@@ -86,7 +86,7 @@ if($cookiedata)
             <button type="submit" id="login-button">Log In</button>
           </li>
 
-          <a href="../signup_page/signup_page.html">Don't have an account? Sign Up</a>
+          <a href="../signup_page/signup_page.php">Don't have an account? Sign Up</a>
         </ul>
       </form>
     </main>

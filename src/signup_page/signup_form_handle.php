@@ -4,7 +4,7 @@ require_once __DIR__.'/../global/php/common_libs.php';
 
 function display_error($error_message) {
     echo $error_message;
-    echo "<br><a href='signup_page.html'> Back to Signup Form</a>";
+    echo "<br><a href='signup_page.php'> Back to Signup Form</a>";
     exit;
 }
 
