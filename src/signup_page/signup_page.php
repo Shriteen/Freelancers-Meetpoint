@@ -50,7 +50,7 @@ if($cookiedata)
   <body>
     <!-- Header -->
     <header>
-      <a href="../index.html">
+      <a href="/index.php">
 	<picture alt="logo">
 	  <source media="(max-width:600px)" srcset="../global/assets/logo_with_name_initials.svg">
 	  <source media="(min-width:601px)" srcset="../global/assets/logo_with_name.svg">
