@@ -136,6 +136,17 @@ function login_authenticate($username,$password,$type) {
     }
 }
     
-
+// accept account type and returns table name for it
+function get_table_of_type($type) {
+    switch($type)
+    {
+    case 'employer':
+        return 'EMPLOYER';
+    case 'freelancer':
+        return 'FREELANCER';
+    default:
+        die('Invalid account type');
+    }
+}
 
 ?>
