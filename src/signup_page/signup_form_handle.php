@@ -105,6 +105,8 @@ function validate() {
             
         
         //valid profile picture
+        move_uploaded_file($_FILES['account-profile-picture']['tmp_name'],
+                           $_SERVER['DOCUMENT_ROOT'].'/datadir/'.$picname);
         $form['account-profile-picture-name']=$picname;
         $form['account-profile-picture-tmpname']=$_FILES['account-profile-picture']['tmp_name'];
     }

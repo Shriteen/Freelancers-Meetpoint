@@ -25,8 +25,8 @@ if($cookiedata)
     <meta charset="UTF-8">
     <title>Freelancers-Meetpoint Home</title>
     <!-- favicon in tab -->
-    <link href="global/assets/favicon.png" rel="icon">
-    <link href="global/style.css" rel="stylesheet">
+    <link href="/global/assets/favicon.png" rel="icon">
+    <link href="/global/style.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
   </head>
   
@@ -34,11 +34,11 @@ if($cookiedata)
     <!-- Header -->
     <header>
       <a href="index.html">
-	<picture alt="logo">
-	  <source media="(max-width:600px)" srcset="global/assets/logo_with_name_initials.svg">
-	  <source media="(min-width:601px)" srcset="global/assets/logo_with_name.svg">
-	  <img src="global/assets/logo_with_name_initials.svg" height="45px" id="header-logo">
-	</picture>
+	    <picture alt="logo">
+	      <source media="(max-width:600px)" srcset="/global/assets/logo_with_name_initials.svg">
+	      <source media="(min-width:601px)" srcset="/global/assets/logo_with_name.svg">
+	      <img src="/global/assets/logo_with_name_initials.svg" height="45px" id="header-logo">
+	    </picture>
       </a>
 
       <!-- TODO: The following name, picture and menu items will be filled and populated by javascript -->
