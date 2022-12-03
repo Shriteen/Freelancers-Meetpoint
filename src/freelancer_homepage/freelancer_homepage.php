@@ -38,13 +38,13 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
         <!-- TODO: freelancers_search remaining-->
         <form id="freelancer-search-form" action="../freelancer_search/freelancer_search.php" method="get" >                  
           <div id="freelancer-search-widget">               
-            <input type="search" id="search_field" name="search_query" placeholder="Find what you are Looking for">
-            <button type="submit" id="search_button">Search</button>  
+            <input type="search" id="search-field" name="search-query" placeholder="Find what you are Looking for">
+            <button type="submit" id="search-button">Search</button>  
           </div>
         </form>
 
         <!--TODO:freelancers_search_results should be filled using php-->
-        <div id="freelancer_search_results">               
+        <div id="freelancer-search-results">               
         </div>
 
       </div>  
