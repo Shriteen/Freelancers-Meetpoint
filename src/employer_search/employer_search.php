@@ -4,6 +4,11 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
 
 ?>
 
+<?php
+
+$search_query=$_GET['search-query'];
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -38,7 +43,7 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
         <!-- TODO: employer_search remaining-->
         <form id="employer-search-form" method="get" >                  
           <div id="employer-search-widget">               
-            <input type="search" id="search-field" name="search-query" placeholder="Find what you are Looking for">
+            <input type="search" id="search-field" name="search-query" placeholder="Find what you are Looking for" value="<?php echo $search_query ?>">
             <button type="submit" id="search-button">Search</button>  
           </div>
         </form>
