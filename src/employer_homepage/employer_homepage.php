@@ -39,8 +39,8 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
         <!-- TODO: employer_search remaining-->
         <form id="employer-search-form" action="../employer_search/employer_search.php" method="get" >                  
           <div id="employer-search-widget">               
-            <input type="search" id="search_field" name="search_query" placeholder="Find what you are Looking for">
-            <button type="submit" id="search_button">Search</button>  
+            <input type="search" id="search-field" name="search-query" placeholder="Find what you are Looking for">
+            <button type="submit" id="search-button">Search</button>  
           </div>
         </form>
 
@@ -51,7 +51,7 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
         <p id='seperator'>OR</p>                         
 
         <div id="post-a-job-message">                       
-          <a href="TODO">Post a Job</a>             
+          <a href="TODO">Post a Job</a>
         </div>
 
       </div>  
