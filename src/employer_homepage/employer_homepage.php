@@ -9,7 +9,7 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Freelancers-Meetpoint Home</title>
+    <title>Home <?php echo $USERNAME ?> - Freelancers-Meetpoint</title>
     <!-- favicon in tab -->
     <link href="/global/assets/favicon.png" rel="icon">
     <link href="/global/style.css" rel="stylesheet">

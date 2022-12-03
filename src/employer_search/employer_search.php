@@ -41,7 +41,7 @@ if($search_query)
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Freelancers-Meetpoint Home</title>
+    <title>Find Talent - Freelancers-Meetpoint</title>
     <!-- favicon in tab -->
     <link href="/global/assets/favicon.png" rel="icon">
     <link href="/global/style.css" rel="stylesheet">
