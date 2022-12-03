@@ -67,7 +67,22 @@ else
         <span>Logout</span>
       </li>
     </a>
-
+    
+    <!-- home -->
+    <?php
+    if($ACCOUNT_TYPE == 'employer')
+        $homepage='/employer_homepage/employer_homepage.php';
+    else
+        $homepage='/freelancer_homepage/freelancer_homepage.php';
+    ?>
+    <a href="<?php echo $homepage ?>">
+      <li class="menu-item">
+        <img src="/global/assets/home.svg" height="20px">
+        <span>Home</span>
+      </li>
+    </a>
+    
+    
 <?php
     // call hook to add items to menu, they should be in above template format
     if(function_exists('add_to_menu_hook'))
