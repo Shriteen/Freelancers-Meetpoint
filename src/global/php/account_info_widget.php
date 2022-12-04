@@ -59,15 +59,7 @@ else
     </button>
   </div>
     
-  <ul>
-    <!-- logout -->
-    <a href="/global/php/logout.php">
-      <li class="menu-item">
-        <img src="/global/assets/logout.svg" height="20px">
-        <span>Logout</span>
-      </li>
-    </a>
-    
+  <ul>    
     <!-- home -->
     <?php
     if($ACCOUNT_TYPE == 'employer')
@@ -79,6 +71,14 @@ else
       <li class="menu-item">
         <img src="/global/assets/home.svg" height="20px">
         <span>Home</span>
+      </li>
+    </a>
+
+    <!-- logout -->
+    <a href="/global/php/logout.php">
+      <li class="menu-item">
+        <img src="/global/assets/logout.svg" height="20px">
+        <span>Logout</span>
       </li>
     </a>
     
