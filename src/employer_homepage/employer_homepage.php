@@ -49,7 +49,7 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
         <p id='seperator'>OR</p>                         
 
         <div id="post-a-job-message">                       
-          <a href="TODO">Post a Job</a>
+          <a href="/create_post/create_post.php">Post a Job</a>
         </div>
 
       </div>  
