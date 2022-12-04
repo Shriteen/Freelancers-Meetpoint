@@ -8,6 +8,31 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
 
 $search_query=$_GET['search-query'];
 
+// TODO: Use more filters
+
+$db=connect_db();
+
+if($search_query)
+{
+    //TODO: sorting of results
+    $db_query_for_search= sprintf("SELECT POST.*,NAME,PROFILE_PIC FROM
+POST JOIN EMPLOYER ON POST.CREATED_BY=EMPLOYER.USERNAME WHERE
+ NAME LIKE '%%%s%%' OR
+ PROJECT_NAME LIKE '%%%s%%' OR
+ REQUIRED_SKILL LIKE '%%%s%%' OR
+ DESCRIPTION LIKE '%%%s%%' OR
+ LOCATION LIKE '%%%s%%' ;",
+                                  $db->real_escape_string($search_query),
+                                  $db->real_escape_string($search_query),
+                                  $db->real_escape_string($search_query),
+                                  $db->real_escape_string($search_query),
+                                  $db->real_escape_string($search_query));
+
+    $db_search_result= $db->query($db_query_for_search);
+    if(!$db_search_result)
+        die('Query Error');
+}
+
 
 ?>
 
@@ -51,7 +76,46 @@ $search_query=$_GET['search-query'];
         </form>
 
         <!--TODO:freelancers_search_results should be filled using php-->
-        <div id="freelancer-search-results">               
+        <div id="freelancer-search-results">
+        <!-- Search results -->
+<?php if(!$search_query): ?>
+          <p class="search-error-message" id="search-query-empty">Please Enter Some Query</p>
+<?php elseif($db_search_result->num_rows == 0): ?>
+          <p class="search-error-message" id="search-query-no-results">
+          No Results Found for <span id="search-query-in-error"> <?php echo $search_query ?></span>
+          </p>
+<?php else: ?>
+  <?php for($i=0;
+            $i < $db_search_result->num_rows;
+            $i++): ?>
+    <?php
+          $row= $db_search_result->fetch_assoc();
+          //check if profile pic is there in database
+          if( $row['PROFILE_PIC'] )
+              $pic='/datadir/'.$row['PROFILE_PIC'];
+          else
+              $pic='/global/assets/unknown_person_profile_icon_grey.svg';
+    ?>
+    <!-- result card -->
+    <a href="/view_post/view_post.php?id=<?php echo urlencode($row['ID']) ?>">
+      <div class="card search-result-card freelancer-search-result-card" >
+        <p class="freelancer-search-result-project-name result-title">
+          <?php echo $row['PROJECT_NAME'] ?>
+        </p>
+        <p class="freelancer-search-result-requirement result-subtitle">
+          <?php echo $row['REQUIRED_SKILL'] ?>
+        </p>
+        <p class="freelancer-search-employer-line result-subsubtitle">
+          By <img src='<?php echo $pic ?>' width="30px" height="30px" > <?php echo $row['NAME'] ?>           
+        </p>
+        <p class="employer-search-result-description">
+          <?php echo $row['DESCRIPTION'] ?>
+        </p>
+      </div>
+    </a>              
+  <?php endfor ?>
+<?php endif; ?>
+
         </div>
 
       </div>  
