@@ -184,11 +184,9 @@ if($cookiedata)
 
 	    <li>
 	      <!-- Experience -->
-	      <!-- TODO: Add the experience inputs interactively -->
-	      <!-- The text and url should have class text-or-link and files should have file -->
 	      <fieldset id="freelancer-signup-experience">
 		<legend>Showcase Your Experience. Put Up Description, Images And Links Of Your Work And Achievements</legend>
-		<ul id="experience-innput-list">
+		<ul id="experience-input-list">
 		  <!-- Filled interactively using JS -->
 		</ul>
 		<div id="add-experience-buttons">
