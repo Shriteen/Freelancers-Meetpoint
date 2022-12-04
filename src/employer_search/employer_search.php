@@ -115,6 +115,7 @@ if($search_query)
           </p>
           <!-- TODO: Ratings -->
         </div>
+      </div>
     </a>
   <?php endfor ?>
 <?php endif; ?>
