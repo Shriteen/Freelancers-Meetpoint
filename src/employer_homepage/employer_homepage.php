@@ -28,7 +28,6 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
 	    </picture>
       </a>
 
-      <!-- TODO: The following name, picture and menu items will be filled and populated by javascript -->
       <?php require_once $_SERVER['DOCUMENT_ROOT'].'/global/php/account_info_widget.php' ?>
     </header> 
 
@@ -36,7 +35,6 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
     <!-- Content -->
     <main>
       <div>
-        <!-- TODO: employer_search remaining-->
         <form id="employer-search-form" action="../employer_search/employer_search.php" method="get" >                  
           <div id="employer-search-widget">               
             <input type="search" id="search-field" name="search-query" placeholder="Find what you are Looking for">

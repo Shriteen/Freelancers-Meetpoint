@@ -114,8 +114,7 @@ if($cookiedata)
 
 	<!-- Employer part -->
 	<fieldset id="employer-signup-data" class="signup-fieldset" disabled>
-	  <!-- TODO: Insert Name -->
-	  <legend><span class="name-label">TODO</span>, Tell us more about you</legend>
+	  <legend><span class="name-label"></span>, Tell us more about you</legend>
 
 	  <ul>
 	    <li>
@@ -140,8 +139,7 @@ if($cookiedata)
 
 	<!-- Freelancer part -->
 	<fieldset id="freelancer-signup-data" class="signup-fieldset" disabled>
-	  <!-- TODO: Insert Name -->
-	  <legend><span class="name-label">TODO</span>, Tell us more about you</legend>
+	  <legend><span class="name-label"></span>, Tell us more about you</legend>
 
 	  <ul>
 	    <li>

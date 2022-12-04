@@ -58,7 +58,6 @@ else
         </picture>
       </a>
 
-      <!-- TODO: The following name, picture and menu items will be filled and populated by javascript -->
       <?php require_once $_SERVER['DOCUMENT_ROOT'].'/global/php/account_info_widget.php' ?>
     </header>
      

@@ -60,7 +60,6 @@ if($search_query)
         </picture>
       </a>
 
-      <!-- TODO: The following name, picture and menu items will be filled and populated by javascript -->
       <?php require_once $_SERVER['DOCUMENT_ROOT'].'/global/php/account_info_widget.php' ?>
     </header>
      
@@ -68,7 +67,6 @@ if($search_query)
     <!-- Content -->
     <main>
       <div>
-        <!-- TODO: employer_search remaining-->
         <form id="employer-search-form" method="get" >                  
           <div id="employer-search-widget">               
             <input type="search" id="search-field" name="search-query" placeholder="Find what you are Looking for" value="<?php echo $search_query ?>">
@@ -76,7 +74,6 @@ if($search_query)
           </div>
         </form>
 
-        <!--TODO:employer_search_results should be filled using php-->
         <div id="employer-search-results">
         <!-- Search results -->
 <?php if(!$search_query): ?>

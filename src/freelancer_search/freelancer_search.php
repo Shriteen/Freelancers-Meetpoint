@@ -60,14 +60,12 @@ POST JOIN EMPLOYER ON POST.CREATED_BY=EMPLOYER.USERNAME WHERE
 	    </picture>
       </a>
 
-      <!-- TODO: The following name, picture and menu items will be filled and populated by javascript -->
       <?php require_once $_SERVER['DOCUMENT_ROOT'].'/global/php/account_info_widget.php' ?>
     </header> 
     
     <!-- Content -->
     <main>
       <div>
-        <!-- TODO: freelancers_search remaining-->
         <form id="freelancer-search-form" method="get" >                  
           <div id="freelancer-search-widget">               
             <input type="search" id="search-field" name="search-query" placeholder="Find what you are Looking for" value="<?php echo $search_query ?>">
@@ -75,7 +73,6 @@ POST JOIN EMPLOYER ON POST.CREATED_BY=EMPLOYER.USERNAME WHERE
           </div>
         </form>
 
-        <!--TODO:freelancers_search_results should be filled using php-->
         <div id="freelancer-search-results">
         <!-- Search results -->
 <?php if(!$search_query): ?>

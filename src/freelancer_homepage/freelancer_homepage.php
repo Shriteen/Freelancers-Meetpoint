@@ -28,14 +28,12 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
 	    </picture>
       </a>
 
-      <!-- TODO: The following name, picture and menu items will be filled and populated by javascript -->
       <?php require_once $_SERVER['DOCUMENT_ROOT'].'/global/php/account_info_widget.php' ?>
     </header> 
     
     <!-- Content -->
     <main>
       <div>
-        <!-- TODO: freelancers_search remaining-->
         <form id="freelancer-search-form" action="../freelancer_search/freelancer_search.php" method="get" >                  
           <div id="freelancer-search-widget">               
             <input type="search" id="search-field" name="search-query" placeholder="Find what you are Looking for">
@@ -43,8 +41,8 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
           </div>
         </form>
 
-        <!--TODO:freelancers_search_results should be filled using php-->
-        <div id="freelancer-search-results">               
+        <!--TODO: suggestions should be filled using php-->
+        <div id="suggestions">               
         </div>
 
       </div>  
