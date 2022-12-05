@@ -50,7 +50,7 @@ if($cookiedata)
   <body>
     <!-- Header -->
     <header>
-      <a href="../index.html">
+      <a href="/index.php">
 	<picture alt="logo">
 	  <source media="(max-width:600px)" srcset="../global/assets/logo_with_name_initials.svg">
 	  <source media="(min-width:601px)" srcset="../global/assets/logo_with_name.svg">
@@ -114,8 +114,7 @@ if($cookiedata)
 
 	<!-- Employer part -->
 	<fieldset id="employer-signup-data" class="signup-fieldset" disabled>
-	  <!-- TODO: Insert Name -->
-	  <legend><span class="name-label">TODO</span>, Tell us more about you</legend>
+	  <legend><span class="name-label"></span>, Tell us more about you</legend>
 
 	  <ul>
 	    <li>
@@ -140,8 +139,7 @@ if($cookiedata)
 
 	<!-- Freelancer part -->
 	<fieldset id="freelancer-signup-data" class="signup-fieldset" disabled>
-	  <!-- TODO: Insert Name -->
-	  <legend><span class="name-label">TODO</span>, Tell us more about you</legend>
+	  <legend><span class="name-label"></span>, Tell us more about you</legend>
 
 	  <ul>
 	    <li>
@@ -184,11 +182,9 @@ if($cookiedata)
 
 	    <li>
 	      <!-- Experience -->
-	      <!-- TODO: Add the experience inputs interactively -->
-	      <!-- The text and url should have class text-or-link and files should have file -->
 	      <fieldset id="freelancer-signup-experience">
 		<legend>Showcase Your Experience. Put Up Description, Images And Links Of Your Work And Achievements</legend>
-		<ul id="experience-innput-list">
+		<ul id="experience-input-list">
 		  <!-- Filled interactively using JS -->
 		</ul>
 		<div id="add-experience-buttons">
