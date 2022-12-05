@@ -51,8 +51,10 @@ if($cookiedata)
 	<p>
 	  A Platform to bring Talent and Talent Seekers at One Place
 	</p>
+      <?php if (!$LOGGED_IN) : ?>
 	<a href="login_page/login_page.php" class="logged-out">Log In</a>
 	<a href="signup_page/signup_page.php" class="logged-out">Sign Up</a>
+      <?php endif; ?>
       </div>
       
       <div class="info-quote" id="quote2">
