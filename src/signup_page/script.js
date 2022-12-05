@@ -107,8 +107,8 @@ addExperienceLinkButton.addEventListener('click',
 					     const newCaptionField = document.createElement('input');
 					     newCaptionField.setAttribute('type','text');
 					     newCaptionField.setAttribute('class','text-or-link');
-					     newCaptionField.setAttribute('name','account-experience-link-caption'+ linkInputCount );
-					     newCaptionField.setAttribute('id','account-experience-link-caption'+ linkInputCount );
+					     newCaptionField.setAttribute('name','account-experience-link-caption-'+ linkInputCount );
+					     newCaptionField.setAttribute('id','account-experience-link-caption-'+ linkInputCount );
 					     newCaptionField.setAttribute('maxlength','100');
 					     newCaptionField.setAttribute('required','true' );
 
@@ -145,8 +145,8 @@ addExperienceImageButton.addEventListener('click',
 					     const newCaptionField = document.createElement('input');
 					     newCaptionField.setAttribute('type','text');
 					     newCaptionField.setAttribute('class','text-or-link');
-					     newCaptionField.setAttribute('name','account-experience-link-caption'+ imageInputCount );
-					     newCaptionField.setAttribute('id','account-experience-link-caption'+ imageInputCount );
+					     newCaptionField.setAttribute('name','account-experience-image-caption-'+ imageInputCount );
+					     newCaptionField.setAttribute('id','account-experience-image-caption-'+ imageInputCount );
 					     newCaptionField.setAttribute('maxlength','100');
 					     newCaptionField.setAttribute('required','true' );
 
