@@ -176,7 +176,68 @@ function validate() {
             display_error('Please provide maximum charges');
 
         //TODO: Experience validation
+
+        $i=0;
+        while(isset($_REQUEST['account-experience-text-'.$i]))
+        {
+            //experience text
+            $text= filter_var( $_REQUEST['account-experience-text-'.$i], FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+            if($text === '')
+                display_error('Invalid Data 0');
+
+            //valid experience text
+            $form['account-experience-text-'.$i]=$text;
+
+            $i++;
+        }        
         
+        $i=0;
+        while(isset($_REQUEST['account-experience-link-'.$i]))
+        {
+            //experience link
+            $link= filter_var( $_REQUEST['account-experience-link-'.$i], FILTER_SANITIZE_URL );
+            if($link === '')
+                display_error('Invalid Data 1');
+            //valid experience link
+            $form['account-experience-link-'.$i]=$link;
+
+            //experience link caption
+            $linkcaption= filter_var( $_REQUEST['account-experience-link-caption-'.$i], FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+            if($linkcaption === '')
+                display_error('Invalid Data 2');
+            //valid experience link caption
+            $form['account-experience-link-caption-'.$i]=$linkcaption;
+
+            $i++;
+        }
+
+        $i=0;
+        while(isset($_FILES['account-experience-image-'.$i]))
+        {
+            //experience image
+            $imagename= filter_var( $_FILES['account-experience-image-'.$i]['name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+            if($imagename === '')
+                display_error('Invalid Data 3');
+
+            if(!filter_var( $imagename,
+                            FILTER_VALIDATE_REGEXP,
+                            array("options"=>array("regexp"=>'/(\.jpg|\.jpeg|\.png)$/')) ))
+                display_error('Images should be in jpg or png format');
+
+            //valid experience image
+            move_uploaded_file($_FILES['account-experience-image-'.$i]['tmp_name'],
+                               $_SERVER['DOCUMENT_ROOT'].'/datadir/'.$imagename);
+            $form['account-experience-image-'.$i]=$imagename;
+                    
+            //experience image caption
+            $imagecaption= filter_var( $_REQUEST['account-experience-image-caption-'.$i], FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+            if($imagecaption === '')
+                display_error('Invalid Data 4');
+            //valid experience image caption
+            $form['account-experience-image-caption-'.$i]=$imagecaption;
+
+            $i++;
+        }
     }
     
     return $form;
@@ -219,6 +280,51 @@ function entry_database($formdata) {
         if(!$db->query($query))
             die('Query Error');
         //successfully inserted
+        
+        //insert text experience
+        $i=0;
+        while(isset($formdata['account-experience-text-'.$i]))
+        {
+            $query= sprintf("INSERT INTO EXPERIENCE VALUES('%s','TEXT','%s',NULL)",
+                            $db->real_escape_string($formdata['account-username']),
+                            $db->real_escape_string($formdata['account-experience-text-'.$i])
+                );
+            if(!$db->query($query))
+                die('Query Error');
+            // inserted
+            $i++;
+        }
+
+        //insert link experience
+        $i=0;
+        while(isset($formdata['account-experience-link-'.$i]))
+        {
+            $query= sprintf("INSERT INTO EXPERIENCE VALUES('%s','LINK','%s','%s')",
+                            $db->real_escape_string($formdata['account-username']),
+                            $db->real_escape_string($formdata['account-experience-link-'.$i]),
+                            $db->real_escape_string($formdata['account-experience-link-caption-'.$i])            
+                );
+            if(!$db->query($query))
+                die('Query Error');
+            // inserted
+            $i++;
+        }
+
+        //insert image experience
+        $i=0;
+        while(isset($formdata['account-experience-image-'.$i]))
+        {
+            $query= sprintf("INSERT INTO EXPERIENCE VALUES('%s','IMAGE','%s','%s')",
+                            $db->real_escape_string($formdata['account-username']),
+                            $db->real_escape_string($formdata['account-experience-image-'.$i]),
+                            $db->real_escape_string($formdata['account-experience-image-caption-'.$i])            
+                );
+            if(!$db->query($query))
+                die('Query Error');
+            // inserted
+            $i++;
+        }        
+        
         break;
     default:
         die('Invalid account type');
