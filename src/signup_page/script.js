@@ -137,6 +137,7 @@ addExperienceImageButton.addEventListener('click',
 					     newContentField.setAttribute('id','account-experience-image-'+ imageInputCount );
 					     newContentField.setAttribute('accept','.jpg, .jpeg, .png' );					     
 					     newContentField.setAttribute('required','true' );
+					     newContentField.addEventListener('change',filePickerWidgetLabelUpdate);
 
 					     const newContentLabel = document.createElement('label');
 					     newContentLabel.textContent='Image';
@@ -168,3 +169,12 @@ addExperienceImageButton.addEventListener('click',
 					     imageInputCount++;
 					 });
 
+function filePickerWidgetLabelUpdate(e)
+{
+    const label= document.querySelector("label[for='"+ e.target.id +"'][class='filepicker-button']" );
+    label.textContent= e.target.value.slice(12);
+}
+
+const fileInputs=document.querySelectorAll("input[type='file']");
+for(i=0; i<fileInputs.length; i++)
+    fileInputs[i].addEventListener('change', filePickerWidgetLabelUpdate);
