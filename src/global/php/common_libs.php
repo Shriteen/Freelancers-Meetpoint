@@ -149,4 +149,27 @@ function get_table_of_type($type) {
     }
 }
 
+// checks whether post of given id exists in database and returns true if present
+function post_exists($pid) {
+    $db= connect_db();
+    
+    $query= sprintf("SELECT * FROM POST WHERE ID=%d", $db->real_escape_string($pid));
+    $result= $db->query($query);
+    if(!$result)
+        die('Query Error');
+
+    if($result->fetch_assoc())
+    {
+        //if post already exists
+        return true;
+    }
+    else
+    {
+        //post doesn't already exist
+        return false;
+    }
+}
+
 ?>
+
+
