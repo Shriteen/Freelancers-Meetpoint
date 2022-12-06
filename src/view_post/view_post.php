@@ -88,6 +88,25 @@ else
           $subject= "Application for ".$row['PROJECT_NAME']." as ".$row['REQUIRED_SKILL'];
           $message="This is in regard to $url\n";
           $mail=sprintf("mailto:%s?subject=%s&body=%s",$row['EMAIL'],$subject,$message);
+
+
+          if($row['ALLOW_BIDS'])
+          {
+              $bid_query= sprintf("SELECT BIDS_FOR.*,NAME,EMAIL FROM
+ BIDS_FOR JOIN FREELANCER ON BIDS_FOR.FREELANCER_USERNAME=FREELANCER.USERNAME WHERE
+ POST_ID=%d ORDER BY AMOUNT;",
+                                  $db->real_escape_string($row['ID']) );
+
+              $bid_result= $db->query($bid_query);
+              if(!$bid_result)
+                  die('Query Error');
+              
+              if($bid_result->num_rows > 0)
+                  $bids_present=true;
+              else
+                  $bids_present=false;
+          }
+
 ?>
           <!-- details card -->
           <div class="card" id="post-details" >
@@ -106,17 +125,78 @@ else
               <p id="description">
                 <?php echo $row['DESCRIPTION'] ?>
               </p>
-            </p>
-              
-              <!-- TODO: following view should change for employer and freelancers differently --> 
-            <?php if($row['ALLOW_BIDS']) : ?>
-              <!-- TODO: Bids -->
-            <?php else: ?>
-              <a href="<?php echo $mail ?>" class="contact-button" id="contact-to-employer">
-                Contact
-              </a>
-            <?php endif; ?>
+            </p>                   
           </div>
+
+          <div class="post-interactive-section card" >    
+
+             <!-- TODO: following view should change for employer and freelancers differently -->
+            <?php if( $ACCOUNT_TYPE == 'freelancer' ) : ?>
+              <!-- freelancer is viewing -->
+              <?php if($row['ALLOW_BIDS']) : ?>
+              <!-- show bids -->
+                <?php if($bids_present) : ?>
+                  <table class="bid-table" id="freelancer-bid-table" >
+                  <th>Bidder</th><th>Amount</th>
+                  <!-- Show all bids -->
+                  <?php while($brow=$bid_result->fetch_assoc()): ?>
+                    <tr>
+                      <td><?php echo $brow['NAME'] ?></td>
+                      <td><?php echo $brow['AMOUNT'] ?></td>
+                    </tr>
+                  <?php endwhile; ?> 
+                  </table>
+                <?php else: ?>
+                  <p id="no-bids-message" >There are No bids yet! Start bidding </p>
+                <?php endif; ?>
+                       
+              <!-- input for bids -->
+              <form action="process_bid.php" method="post">
+                <label for="bid-amount-input" >Bid Amount</label>
+                <input type="number" min="1" name="bid-amount" id="bid-amount-input" required>
+                <input type="text" name="freelancer-name" hidden value=<?php echo $USERNAME ?>>
+                <input type="text" name="post-id" hidden value=<?php echo $id ?>>
+                <button type="submit" >Bid</button>
+              </form>
+              <?php else: ?>
+                <a href="<?php echo $mail ?>" class="contact-button" id="contact-to-employer">
+                  Contact
+                </a>
+              <?php endif; ?>
+            <?php else: ?>
+              <!-- employer is viewing -->
+              <!-- TODO: Make sure other employers can not see this -->
+              <!-- Bids are enabled and OP is viewing -->              
+              <?php if($row['ALLOW_BIDS'] && $row['CREATED_BY']==$USERNAME ) : ?>
+              <!-- show bids -->
+                <?php if($bids_present) : ?>
+                  <table class="bid-table" id="freelancer-bid-table" >
+                  <th>Bidder</th><th>Amount</th><th>Contact</th>
+                  <!-- Show all bids -->
+                  <?php while($brow=$bid_result->fetch_assoc()): ?>
+                    <tr>
+                      <td><?php echo $brow['NAME'] ?></td>
+                      <td><?php echo $brow['AMOUNT'] ?></td>
+                      <?php
+                        $subject= "Response to bid for ".$row['PROJECT_NAME']." as ".$row['REQUIRED_SKILL'];
+                        $message="This is in regard to $url\n";
+                        $mail=sprintf("mailto:%s?subject=%s&body=%s",$brow['EMAIL'],$subject,$message);
+                      ?>
+                      <td>
+                        <a href="<?php echo $mail ?>" class="contact-button freelancer-contact-button" >
+                          Contact
+                        </a>
+                      </td>
+                    </tr>
+                  <?php endwhile; ?> 
+                  </table>
+                <?php else: ?>
+                  <p id="no-bids-message" >There are No Bids yet </p>
+                <?php endif; ?>
+              <?php endif; ?>
+            <?php endif; ?>
+
+          </div>    
 <?php endif; ?>
           
 	    
