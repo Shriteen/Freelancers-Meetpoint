@@ -175,7 +175,7 @@ else
                   <!-- Show all bids -->
                   <?php while($brow=$bid_result->fetch_assoc()): ?>
                     <tr>
-                      <td><?php echo $brow['NAME'] ?></td>
+                      <td><a href="/profile_page/profile_page.php?user=<?php echo urlencode($brow['FREELANCER_USERNAME']) ?>"><?php echo $brow['NAME'] ?></a></td>
                       <td><?php echo $brow['AMOUNT'] ?></td>
                       <?php
                         $subject= "Response to bid for ".$row['PROJECT_NAME']." as ".$row['REQUIRED_SKILL'];
