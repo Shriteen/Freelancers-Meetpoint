@@ -13,6 +13,14 @@ commonFormSubmitButton.addEventListener('click',
 					    console.log('All common part inputs valid');
 
 					    //TODO: check if passwords identical using custom validity
+						pass = document.querySelector("#signup-account-password").value;
+						const confirmpass = document.querySelector("#signup-account-confirm-password").value;
+						console.log("lol");
+						console.log(pass+"   " +confirmpass);
+						if(pass!==confirmpass){
+							alert("Password does not match");
+							return;
+						}
 
 					    //hide common part and display relevent part based on account type
 					    const commonForm=document.querySelector("#common-signup-data");
