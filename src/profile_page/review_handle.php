@@ -4,7 +4,7 @@ require_once __DIR__.'/../global/php/common_libs.php';
 
 function display_error($error_message) {
     echo $error_message;
-    echo "<br><a href='profile_page.php?id=".$_REQUEST['reviewee']."'> Back </a>";
+    echo "<br><a href='profile_page.php?user=".$_REQUEST['reviewee']."'> Back </a>";
     exit;
 }
 
@@ -107,5 +107,5 @@ function entry_database($formdata) {
 $formdata=validate();
 entry_database($formdata);
 
-header('Location: profile_page.php?id='.$_REQUEST['reviewee'],true);
+header('Location: profile_page.php?user='.$_REQUEST['reviewee'],true);
 exit;
