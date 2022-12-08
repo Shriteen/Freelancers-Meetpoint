@@ -37,7 +37,7 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
         <form id="freelancer-search-form" action="../freelancer_search/freelancer_search.php" method="get" >                  
           <div id="freelancer-search-widget">               
             <input type="search" id="search-field" name="search-query" placeholder="Find what you are Looking for">
-            <button type="submit" id="search-button">Search</button>  
+            <button type="submit" id="search-button"><img src="/global/assets/search_icon.png" width="25px" height="25px"></button>  
           </div>
         </form>
 

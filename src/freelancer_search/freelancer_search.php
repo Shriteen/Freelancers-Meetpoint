@@ -69,7 +69,7 @@ POST JOIN EMPLOYER ON POST.CREATED_BY=EMPLOYER.USERNAME WHERE
         <form id="freelancer-search-form" method="get" >                  
           <div id="freelancer-search-widget">               
             <input type="search" id="search-field" name="search-query" placeholder="Find what you are Looking for" value="<?php echo $search_query ?>">
-            <button type="submit" id="search-button">Search</button>  
+            <button type="submit" id="search-button"><img src="/global/assets/search_icon.png" width="25px" height="25px"></button>  
           </div>
         </form>
 
