@@ -67,13 +67,13 @@ POST JOIN EMPLOYER ON POST.CREATED_BY=EMPLOYER.USERNAME WHERE
     <main>
       <div>
         <form id="freelancer-search-form" method="get" >                  
-          <div id="freelancer-search-widget">               
+          <div id="freelancer-search-widget" class="search-widget">               
             <input type="search" id="search-field" name="search-query" placeholder="Find what you are Looking for" value="<?php echo $search_query ?>">
             <button type="submit" id="search-button"><img src="/global/assets/search_icon.png" width="25px" height="25px"></button>  
           </div>
         </form>
 
-        <div id="freelancer-search-results">
+        <div id="freelancer-search-results" class="search-results">
         <!-- Search results -->
 <?php if(!$search_query): ?>
           <p class="search-error-message" id="search-query-empty">Please Enter Some Query</p>
@@ -105,7 +105,7 @@ POST JOIN EMPLOYER ON POST.CREATED_BY=EMPLOYER.USERNAME WHERE
         <p class="freelancer-search-employer-line result-subsubtitle">
           By <img src='<?php echo $pic ?>' width="30px" height="30px" > <?php echo $row['NAME'] ?>           
         </p>
-        <p class="employer-search-result-description">
+        <p class="freelancer-search-result-description">
           <?php echo $row['DESCRIPTION'] ?>
         </p>
       </div>
