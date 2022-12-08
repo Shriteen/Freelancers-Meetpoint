@@ -13,6 +13,7 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
     <!-- favicon in tab -->
     <link href="/global/assets/favicon.png" rel="icon">
     <link href="/global/style.css" rel="stylesheet">
+    <link href="/global/search_common_styles.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <script src="/global/account_info_widget.js" defer></script> 
   </head>
