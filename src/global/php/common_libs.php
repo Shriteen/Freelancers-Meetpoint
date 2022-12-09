@@ -170,6 +170,28 @@ function post_exists($pid) {
     }
 }
 
+function get_rating_of($user)
+{
+    $db= connect_db();
+  
+    $query= sprintf("SELECT AVG(RATING) AS AVERAGE FROM REVIEWS WHERE REVIEWEE='%s'", $db->real_escape_string($user));
+    $result= $db->query($query);
+ 
+    if(!$result)
+       die('Query Error');
+
+    if($rat=$result->fetch_assoc())
+    {
+        //if there is result
+        return $rat['AVERAGE'];
+    }
+    else
+    {
+        //if result from database is empty
+        return null;
+    }
+}
+
 ?>
 
 
