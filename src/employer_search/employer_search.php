@@ -112,6 +112,10 @@ if($search_query)
             <?php echo $row['LOCATION'] ?>
           </p>
           <!-- TODO: Ratings -->
+          <?php $rating=get_rating_of($row['USERNAME']);
+              if ($rating): ?>
+                <p class="employer-search-result-rating freelancer-rating"><?php echo $rating."/5 Stars" ?></p>
+              <?php endif; ?>
         </div>
       </div>
     </a>
