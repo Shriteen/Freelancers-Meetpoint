@@ -13,6 +13,7 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
     <!-- favicon in tab -->
     <link href="/global/assets/favicon.png" rel="icon">
     <link href="/global/style.css" rel="stylesheet">
+    <link href="/global/search_common_styles.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <script src="/global/account_info_widget.js" defer></script> 
   </head>
@@ -35,9 +36,9 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
     <main>
       <div>
         <form id="freelancer-search-form" action="../freelancer_search/freelancer_search.php" method="get" >                  
-          <div id="freelancer-search-widget">               
+          <div id="freelancer-search-widget" class="search-widget">               
             <input type="search" id="search-field" name="search-query" placeholder="Find what you are Looking for">
-            <button type="submit" id="search-button">Search</button>  
+            <button type="submit" id="search-button"><img src="/global/assets/search_icon.png" width="25px" height="25px"></button>  
           </div>
         </form>
 

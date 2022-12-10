@@ -45,6 +45,7 @@ if($search_query)
     <!-- favicon in tab -->
     <link href="/global/assets/favicon.png" rel="icon">
     <link href="/global/style.css" rel="stylesheet">
+    <link href="/global/search_common_styles.css" rel="stylesheet">     
     <link href="style.css" rel="stylesheet">
     <script src="/global/account_info_widget.js" defer></script>     
   </head>
@@ -68,13 +69,13 @@ if($search_query)
     <main>
       <div>
         <form id="employer-search-form" method="get" >                  
-          <div id="employer-search-widget">               
+          <div id="employer-search-widget" class="search-widget">               
             <input type="search" id="search-field" name="search-query" placeholder="Find what you are Looking for" value="<?php echo $search_query ?>">
-            <button type="submit" id="search-button">Search</button>  
+            <button type="submit" id="search-button"><img src="/global/assets/search_icon.png" width="25px" height="25px"></button>  
           </div>
         </form>
 
-        <div id="employer-search-results">
+        <div id="employer-search-results" class="search-results">
         <!-- Search results -->
 <?php if(!$search_query): ?>
           <p class="search-error-message" id="search-query-empty">Please Enter Some Query</p>
