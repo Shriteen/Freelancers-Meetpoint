@@ -112,6 +112,7 @@ WHERE REVIEWEE='%s' ;",
     <!-- favicon in tab -->
     <link href="/global/assets/favicon.png" rel="icon">
     <link href="/global/style.css" rel="stylesheet">
+    <link href="/global/search_common_styles.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <script src="/global/account_info_widget.js" defer></script>     
   </head>
@@ -186,15 +187,17 @@ WHERE REVIEWEE='%s' ;",
           <?php while( $rev=$review_result->fetch_assoc() ) : ?>
         
           <div class="review-box" >
-            <img src='
-                      <?php
-                           if( $rev['E_PICTURE'] )
-                               echo '/datadir/'.$rev['E_PICTURE'];
-                           else
-                               echo '/global/assets/unknown_person_profile_icon_grey.svg';
-                      ?>
-                     ' width="30px" height="30px" >
-            <span class="reviewer-name" ><?php echo $rev['REVIEWER_NAME'] ?></span>           
+            <div class="reviewer-info">
+              <img src='
+                        <?php
+                            if( $rev['E_PICTURE'] )
+                                echo '/datadir/'.$rev['E_PICTURE'];
+                            else
+                                echo '/global/assets/unknown_person_profile_icon_grey.svg';
+                        ?>
+                       ' width="30px" height="30px" >
+              <span class="reviewer-name" ><?php echo $rev['REVIEWER_NAME'] ?></span>
+            </div>
             <p class="review-rating">
             <?php //TODO: convert to stars
               echo $rev['RATING']."/5 Stars";
@@ -218,12 +221,11 @@ WHERE REVIEWEE='%s' ;",
 	          <label for="review-rating-input">Rating</label>
 	          <input type="number" id="review-rating-input" name="rating" min="0.5" max="5" step="0.5" required>
             </li>
-            <li>
+            <li id="review-submit-button-container">
               <button type="submit" id="review-submit-button">Post Review</button>
             </li>
-            <li>
-              <label for="review-description">Description</label>
-	          <textarea id="review-description" name="description" ></textarea>
+            <li id="review-description-container">
+	          <textarea id="review-description" name="description" placeholder="Write a review.."></textarea>
             </li>
 	        <input type="text" name="reviewer" value="<?php echo $USERNAME ?>" hidden>
 	        <input type="text" name="reviewee" value="<?php echo $user ?>" hidden>
@@ -234,8 +236,8 @@ WHERE REVIEWEE='%s' ;",
 
         <?php if(($exp_text_result->num_rows+$exp_link_result->num_rows+$exp_image_result->num_rows) > 0 ) :?>
           <!-- any experience data exists -->
-          <p>Gallery</p>
           <div class="experience-gallery-section">
+          <p>Gallery</p>
 
           <!-- any text type experience data exists -->          
           <?php if($exp_text_result->num_rows > 0 ) :?>
