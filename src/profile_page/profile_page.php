@@ -165,7 +165,12 @@ WHERE REVIEWEE='%s' ;",
             <!-- Rating, charges and location -->    
             <div id="profile-minor-details-box">
               <p id="profile-ratings-summary">
-                <?php echo "rating TODO" ?>
+                <?php $rating=get_rating_of($user);
+                    if($rating)
+                        echo $rating."/5 Stars";
+                    else
+                        echo "No Reviews Yet";
+                ?>
               </p>
               <p id="profile-charges">
                 <?php echo "Charges ₹".$baseinfo['MIN_CHARGES']."-".$baseinfo['MAX_CHARGES']." Per Hour" ?>
