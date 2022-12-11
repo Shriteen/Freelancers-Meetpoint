@@ -56,7 +56,8 @@ function validate() {
 function entry_database($formdata) {
     $db = connect_db();
 
-    $query= sprintf("INSERT INTO BIDS_FOR VALUES('%s',%d,%d) ON DUPLICATE KEY UPDATE AMOUNT=%d",
+    $query= sprintf("INSERT INTO BIDS_FOR(FREELANCER_USERNAME,POST_ID,AMOUNT)
+ VALUES('%s',%d,%d) ON DUPLICATE KEY UPDATE AMOUNT=%d,TIME_STAMP=now()",
                     $db->real_escape_string($formdata['freelancer-name']),
                     $db->real_escape_string($formdata['post-id']),
                     $db->real_escape_string($formdata['bid-amount']),

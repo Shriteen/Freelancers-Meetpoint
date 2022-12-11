@@ -76,7 +76,8 @@ function entry_database($formdata) {
 
     if($formdata['description']!=='')
     {
-        $query= sprintf("INSERT INTO REVIEWS VALUES('%s','%s',%f,'%s') ON DUPLICATE KEY UPDATE RATING=%f,DESCRIPTION='%s'",
+        $query= sprintf("INSERT INTO REVIEWS(REVIEWER,REVIEWEE,RATING,DESCRIPTION)
+ VALUES('%s','%s',%f,'%s') ON DUPLICATE KEY UPDATE RATING=%f,DESCRIPTION='%s',TIME_STAMP=now()",
                         $db->real_escape_string($formdata['reviewer']),
                         $db->real_escape_string($formdata['reviewee']),
                         $db->real_escape_string($formdata['rating']),
@@ -91,7 +92,8 @@ function entry_database($formdata) {
     }
     else
     {
-        $query= sprintf("INSERT INTO REVIEWS VALUES('%s','%s',%f,null) ON DUPLICATE KEY UPDATE RATING=%f",
+        $query= sprintf("INSERT INTO REVIEWS(REVIEWER,REVIEWEE,RATING,DESCRIPTION)
+ VALUES('%s','%s',%f,null) ON DUPLICATE KEY UPDATE RATING=%f,TIME_STAMP=now()",
                         $db->real_escape_string($formdata['reviewer']),
                         $db->real_escape_string($formdata['reviewee']),
                         $db->real_escape_string($formdata['rating']),

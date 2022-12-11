@@ -80,8 +80,22 @@ addExperienceTextButton.addEventListener('click',
 					     newContentLabel.textContent='Describe';
 					     newContentLabel.setAttribute('for',newContentField.id);
 
+					     const newTimestampField = document.createElement('input');
+					     newTimestampField.setAttribute('type','date');
+					     newTimestampField.setAttribute('class','experience-date');
+					     newTimestampField.setAttribute('name','account-experience-text-time-'+ textInputCount );
+					     newTimestampField.setAttribute('id','account-experience-text-time-'+ textInputCount );
+					     newTimestampField.setAttribute('max',new Date().toISOString().slice(0,10));
+					     newTimestampField.setAttribute('required','true' );
+
+					     const newTimestampLabel = document.createElement('label');
+					     newTimestampLabel.textContent='Date';
+					     newTimestampLabel.setAttribute('for',newTimestampField.id);
+					     
 					     newListItem.appendChild(newContentLabel);
 					     newListItem.appendChild(newContentField);
+					     newListItem.appendChild(newTimestampLabel);
+					     newListItem.appendChild(newTimestampField);
 					     experienceInputList.appendChild(newListItem);
 					     textInputCount++;
 					 });
@@ -115,11 +129,26 @@ addExperienceLinkButton.addEventListener('click',
 					     const newCaptionLabel = document.createElement('label');
 					     newCaptionLabel.textContent='Caption';
 					     newCaptionLabel.setAttribute('for',newCaptionField.id);
+
+					     const newTimestampField = document.createElement('input');
+					     newTimestampField.setAttribute('type','date');
+					     newTimestampField.setAttribute('class','experience-date');
+					     newTimestampField.setAttribute('name','account-experience-link-time-'+ linkInputCount );
+					     newTimestampField.setAttribute('id','account-experience-link-time-'+ linkInputCount );
+					     newTimestampField.setAttribute('max',new Date().toISOString().slice(0,10));
+					     newTimestampField.setAttribute('required','true' );
+
+					     const newTimestampLabel = document.createElement('label');
+					     newTimestampLabel.textContent='Date';
+					     newTimestampLabel.setAttribute('for',newTimestampField.id);
+					     
 					     
 					     newListItem.appendChild(newContentLabel);
 					     newListItem.appendChild(newContentField);
 					     newListItem.appendChild(newCaptionLabel);
 					     newListItem.appendChild(newCaptionField);
+					     newListItem.appendChild(newTimestampLabel);
+					     newListItem.appendChild(newTimestampField);
 					     experienceInputList.appendChild(newListItem);
 					     linkInputCount++;
 					 });
@@ -159,12 +188,26 @@ addExperienceImageButton.addEventListener('click',
 					     filePickerButton.textContent='Pick a file [ jpg/png ]';
 					     filePickerButton.setAttribute('for',newContentField.id);
 					     filePickerButton.setAttribute('class','filepicker-button');					     
+
+					     const newTimestampField = document.createElement('input');
+					     newTimestampField.setAttribute('type','date');
+					     newTimestampField.setAttribute('class','experience-date');
+					     newTimestampField.setAttribute('name','account-experience-image-time-'+ imageInputCount );
+					     newTimestampField.setAttribute('id','account-experience-image-time-'+ imageInputCount );
+					     newTimestampField.setAttribute('max',new Date().toISOString().slice(0,10));
+					     newTimestampField.setAttribute('required','true' );
+
+					     const newTimestampLabel = document.createElement('label');
+					     newTimestampLabel.textContent='Date';
+					     newTimestampLabel.setAttribute('for',newTimestampField.id);
 					     
 					     newListItem.appendChild(newContentLabel);
 					     newListItem.appendChild(newContentField);
 					     newListItem.appendChild(filePickerButton);
 					     newListItem.appendChild(newCaptionLabel);
 					     newListItem.appendChild(newCaptionField);
+					     newListItem.appendChild(newTimestampLabel);
+					     newListItem.appendChild(newTimestampField);
 					     experienceInputList.appendChild(newListItem);
 					     imageInputCount++;
 					 });
