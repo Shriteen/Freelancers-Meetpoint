@@ -1,0 +1,18 @@
+body {
+  background-color: blue;
+  text-align: center;
+  color: white;
+}
+
+#seperator {
+  color: white;
+  text-align: center;
+}
+
+#post-a-job-message a{
+  color: white;
+  padding: 0.5em;
+  border: 1px solid white; 
+  border-radius: 20px;
+  text-decoration: none;
+}
