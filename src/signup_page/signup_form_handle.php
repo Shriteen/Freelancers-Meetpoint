@@ -188,6 +188,16 @@ function validate() {
             //valid experience text
             $form['account-experience-text-'.$i]=$text;
 
+
+            //experience timestamp
+            $timestamp= filter_var( $_REQUEST['account-experience-text-time-'.$i], FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+            if($timestamp === '')
+                display_error('Invalid timestamp');
+            $timestamp= date("Y-m-d",strtotime($timestamp));
+            
+            //valid timestamp
+            $form['account-experience-text-time-'.$i]=$timestamp;
+            
             $i++;
         }        
         
@@ -208,6 +218,15 @@ function validate() {
             //valid experience link caption
             $form['account-experience-link-caption-'.$i]=$linkcaption;
 
+            //experience timestamp
+            $timestamp= filter_var( $_REQUEST['account-experience-link-time-'.$i], FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+            if($timestamp === '')
+                display_error('Invalid timestamp');
+            $timestamp= date("Y-m-d",strtotime($timestamp));
+            
+            //valid timestamp
+            $form['account-experience-link-time-'.$i]=$timestamp;
+            
             $i++;
         }
 
@@ -236,6 +255,15 @@ function validate() {
             //valid experience image caption
             $form['account-experience-image-caption-'.$i]=$imagecaption;
 
+            //experience timestamp
+            $timestamp= filter_var( $_REQUEST['account-experience-image-time-'.$i], FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+            if($timestamp === '')
+                display_error('Invalid timestamp');
+            $timestamp= date("Y-m-d",strtotime($timestamp));
+            
+            //valid timestamp
+            $form['account-experience-image-time-'.$i]=$timestamp;
+            
             $i++;
         }
     }
@@ -287,9 +315,10 @@ VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%d','%d')",
         $i=0;
         while(isset($formdata['account-experience-text-'.$i]))
         {
-            $query= sprintf("INSERT INTO EXPERIENCE VALUES('%s','TEXT','%s',NULL)",
+            $query= sprintf("INSERT INTO EXPERIENCE VALUES('%s','TEXT','%s',NULL,'%s')",
                             $db->real_escape_string($formdata['account-username']),
-                            $db->real_escape_string($formdata['account-experience-text-'.$i])
+                            $db->real_escape_string($formdata['account-experience-text-'.$i]),
+                            $db->real_escape_string($formdata['account-experience-text-time-'.$i])
                 );
             if(!$db->query($query))
                 die('Query Error');
@@ -301,10 +330,11 @@ VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%d','%d')",
         $i=0;
         while(isset($formdata['account-experience-link-'.$i]))
         {
-            $query= sprintf("INSERT INTO EXPERIENCE VALUES('%s','LINK','%s','%s')",
+            $query= sprintf("INSERT INTO EXPERIENCE VALUES('%s','LINK','%s','%s','%s')",
                             $db->real_escape_string($formdata['account-username']),
                             $db->real_escape_string($formdata['account-experience-link-'.$i]),
-                            $db->real_escape_string($formdata['account-experience-link-caption-'.$i])            
+                            $db->real_escape_string($formdata['account-experience-link-caption-'.$i]),
+                            $db->real_escape_string($formdata['account-experience-link-time-'.$i])
                 );
             if(!$db->query($query))
                 die('Query Error');
@@ -316,10 +346,11 @@ VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%d','%d')",
         $i=0;
         while(isset($formdata['account-experience-image-'.$i]))
         {
-            $query= sprintf("INSERT INTO EXPERIENCE VALUES('%s','IMAGE','%s','%s')",
+            $query= sprintf("INSERT INTO EXPERIENCE VALUES('%s','IMAGE','%s','%s','%s')",
                             $db->real_escape_string($formdata['account-username']),
                             $db->real_escape_string($formdata['account-experience-image-'.$i]),
-                            $db->real_escape_string($formdata['account-experience-image-caption-'.$i])            
+                            $db->real_escape_string($formdata['account-experience-image-caption-'.$i]),
+                            $db->real_escape_string($formdata['account-experience-image-time-'.$i])
                 );
             if(!$db->query($query))
                 die('Query Error');
