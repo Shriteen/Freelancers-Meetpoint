@@ -250,7 +250,8 @@ function entry_database($formdata) {
     switch($formdata['account-type'])
     {
     case 'employer':
-        $query= sprintf("INSERT INTO EMPLOYER VALUES('%s','%s','%s','%s','%s','%s')",
+        $query= sprintf("INSERT INTO EMPLOYER(USERNAME,NAME,EMAIL,PASSWORD,LOCATION,PROFILE_PIC)
+VALUES('%s','%s','%s','%s','%s','%s')",
                         $db->real_escape_string($formdata['account-username']),
                         $db->real_escape_string($formdata['account-name']),
                         $db->real_escape_string($formdata['account-email']),
@@ -264,7 +265,8 @@ function entry_database($formdata) {
         //successfully inserted
         break;
     case 'freelancer':
-        $query= sprintf("INSERT INTO FREELANCER VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%d','%d')",
+        $query= sprintf("INSERT INTO FREELANCER (USERNAME,NAME,EMAIL,PASSWORD,LOCATION,PROFILE_PIC,PROFESSION,DESCRIPTION,MIN_CHARGES,MAX_CHARGES)
+VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%d','%d')",
                         $db->real_escape_string($formdata['account-username']),
                         $db->real_escape_string($formdata['account-name']),
                         $db->real_escape_string($formdata['account-email']),
