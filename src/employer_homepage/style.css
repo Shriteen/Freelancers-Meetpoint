@@ -1,18 +1,25 @@
-body {
-  background-color: blue;
+#seperator,
+#post-a-job-message a {
+  color: #ffffff;
   text-align: center;
-  color: white;
+  font-size: 1.2em
 }
 
-#seperator {
-  color: white;
-  text-align: center;
+#post-a-job-message{
+    max-width: max-content;
+    margin: 2em auto;    
+}
+
+#post-a-job-message a:hover,
+#post-a-job-message a:focus
+{
+    color: #2200bb;
+    background-color: #ffffff;
 }
 
 #post-a-job-message a{
-  color: white;
-  padding: 0.5em;
-  border: 1px solid white; 
-  border-radius: 20px;
-  text-decoration: none;
+    padding: 0.5em 2em;
+    border: 2px solid #ffffff; 
+    border-radius: 1em;
+    text-decoration: none;
 }
