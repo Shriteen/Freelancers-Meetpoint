@@ -16,6 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `ADMIN`
+--
+
+DROP TABLE IF EXISTS `ADMIN`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ADMIN` (
+  `ADMIN` varchar(100) NOT NULL,
+  `PASSWORD` varchar(255) NOT NULL,
+  PRIMARY KEY (`ADMIN`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ADMIN`
+--
+
+LOCK TABLES `ADMIN` WRITE;
+/*!40000 ALTER TABLE `ADMIN` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ADMIN` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `BIDS_FOR`
 --
 
