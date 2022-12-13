@@ -36,7 +36,10 @@ require_once __DIR__.'/../global/php/common_libs.php';
        </ul>
       
        <div class="js-tabs__content" id="stat-page">
-          
+       <?php
+           require_once __DIR__.'/statistics.php';
+           present();
+       ?>
        </div>
 
        <div class="js-tabs__content" id="manage-page">
