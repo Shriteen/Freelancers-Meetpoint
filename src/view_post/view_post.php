@@ -43,6 +43,8 @@ else
     <!-- favicon in tab -->
     <link href="/global/assets/favicon.png" rel="icon">
     <link href="/global/style.css" rel="stylesheet">
+    <link href="/global/form_common_styles.css" rel="stylesheet">
+    <link href="/global/table_common_styles.css" rel="stylesheet">     
     <link href="style.css" rel="stylesheet">
     <script src="/global/account_info_widget.js" defer></script>     
   </head>
@@ -118,7 +120,7 @@ else
               </span>
             </p>
             <p id="requirement-line">
-              Looking for <?php echo $row['REQUIRED_SKILL'] ?>
+              Looking for <span id="requirement-skill"> <?php echo $row['REQUIRED_SKILL'] ?></span>
             </p>
               <p id="description-line">
               Details
@@ -151,12 +153,12 @@ else
                 <?php endif; ?>
                        
               <!-- input for bids -->
-              <form action="process_bid.php" method="post">
+              <form id="bid-form" action="process_bid.php" method="post">
                 <label for="bid-amount-input" >Bid Amount</label>
                 <input type="number" min="1" name="bid-amount" id="bid-amount-input" required>
                 <input type="text" name="freelancer-name" hidden value=<?php echo $USERNAME ?>>
                 <input type="text" name="post-id" hidden value=<?php echo $id ?>>
-                <button type="submit" >Bid</button>
+                <button id="submit-button" type="submit" >Bid</button>
               </form>
               <?php else: ?>
                 <a href="<?php echo $mail ?>" class="contact-button" id="contact-to-employer">

@@ -1,0 +1,67 @@
+main{
+    max-width: 40rem;
+    margin: auto;
+}
+
+main > div{
+    padding: 1rem;
+    margin: 1rem;
+}
+
+#post-details p{
+    font-size: 1.5rem;
+    margin: 0.5rem;
+}
+
+p#project-name{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2200bb;
+    text-align: center;
+    margin: 0 0 0.3em 0;
+}
+
+#employer-pic-name img{
+    border-radius: 50%;
+    margin: 0.2em;
+}
+
+#employer-pic-name,
+#employer-line{
+    display: flex;
+    align-items: center;
+}
+
+#employer-pic-name{
+    background-color: rgba(34,0,255,0.4);
+    padding: 0.2em 1em 0.2em 0.2em;
+    margin: 0 0.5em;
+    border-radius: 1em;
+}
+
+#requirement-skill{
+    color: #2200bb;
+}
+
+p#description{
+    color: rgba(0,0,0,0.60);
+    font-size: 1.1em;
+    margin: 0.5em 2em;
+}
+
+#freelancer-bid-table tr>td:first-child>a{
+    color: #2200bb;
+}
+
+#bid-form{
+    padding: 0;
+}
+
+#submit-button{
+    display: block;
+    margin: 1rem auto;
+}
+
+#no-bids-message{
+    font-size: 1.1em;
+}
