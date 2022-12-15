@@ -64,9 +64,11 @@ fieldset[disabled]{
 
 
 /* center some elements */
-form li,
+form li{
+    margin: 1rem 0;
+}
 #account-type-selector,
-form li:last-of-type {
+.submit-button-box{
     margin: 1rem auto;
 }
 
@@ -103,10 +105,18 @@ input[type="file"]{
     border: 1px solid rgba(0,0,0,0.5);
     padding: 0.1em 0.6em;
     border-radius: 1em;
+    max-width: 12em;
+    overflow: clip;
+    text-overflow: ellipsis;
+}
+
+/* hack to let contents after button to be on next line */
+.filepicker-button + label{
+    display: block;
 }
 
 /* improve visual appearance */
-li label:first-child,
+li label,
 li legend{
     color: rgba(0,0,0,0.75);
     font-size: 0.9em;

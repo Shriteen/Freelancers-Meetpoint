@@ -104,9 +104,9 @@ if($cookiedata)
 		<label for="signup-account-type-freelancer">Find Talent</label>
 	      </fieldset>
 	    </li>
-	    <li>
+	    <li class="submit-button-box">
 	      <!-- Submit -->
-	      <button type="button" id="signup-account-common-submit-button">Next</button>
+	      <button type="button" id="signup-account-common-submit-button" >Next</button>
 	    </li>
 	  </ul>
 	  
@@ -131,8 +131,8 @@ if($cookiedata)
 	      <label for="employer-signup-profile-picture" class="filepicker-button" id="employer-signup-profile-picture-filepicker-button">Pick a file [ jpg/png ]</label>
 	    </li>
 	    
-	    <li>
-	      <button type="submit" class="submit-button" id="employer-submit-button">Start</button>
+	    <li class="submit-button-box">
+	      <button type="submit" class="submit-button"  id="employer-submit-button">Start</button>
 	    </li>
 	  </ul>
 	</fieldset>
@@ -195,7 +195,7 @@ if($cookiedata)
 	      </fieldset>
 	    </li>
 	    
-	    <li>
+	    <li class="submit-button-box">
 	      <!-- Submit -->
 	      <button type="submit" class="submit-button" id="freelancer-submit-button">Start</button>
 	    </li>
