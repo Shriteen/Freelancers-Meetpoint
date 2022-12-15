@@ -1,0 +1,31 @@
+/* making table borders rounded corners isn't simple,
+   the table border can be rounded but cells make them non rounded */
+
+
+table,td,th{
+    border-spacing: 0;
+    border-collapse: separate;
+}
+
+table{
+    border: 1px solid rgba(0,0,0,0.6);
+    width: 100%;
+    text-align: center;
+    border-radius: 1em;
+}
+
+td,th{
+    padding: 0.5em;    
+}
+
+
+/* put right border to all columns except last */
+th:not(:last-child),
+td:not(:last-child) {
+    border-right: 1px solid rgba(0,0,0,0.6);
+}
+
+tr:not(:last-child)>th,
+tr:not(:last-child)>td {
+    border-bottom: 1px solid rgba(0,0,0,0.6);
+}
