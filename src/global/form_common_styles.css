@@ -37,7 +37,8 @@ input,textarea{
     resize: none;
 }
 textarea{
-    font-size: 1em;
+    font-size: 1rem;
+    height: 5em;
 }
 button{
     border: 0;
