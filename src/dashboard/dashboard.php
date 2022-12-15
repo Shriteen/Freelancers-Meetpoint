@@ -14,7 +14,9 @@ require_once __DIR__.'/../global/php/common_libs.php';
     <link href="../global/style.css" rel="stylesheet">
     <link href="../global/form_common_styles.css" rel="stylesheet">    
     <link href="style.css" rel="stylesheet">
+    <link href="../libs/eins-modal.min.css" rel="stylesheet">
     <link href="../libs/vanilla-js-tabs.css" rel="stylesheet">
+    <script src="../libs/eins-modal.min.js" ></script>
     <script src="../libs/vanilla-js-tabs.min.js" ></script>
     <script src="script.js" defer></script>
      
@@ -43,7 +45,10 @@ require_once __DIR__.'/../global/php/common_libs.php';
        </div>
 
        <div class="js-tabs__content" id="manage-page">
-          
+       <?php
+           require_once __DIR__.'/manage_users.php';
+           present_manage();
+       ?>
        </div>
 
        <div class="js-tabs__content" id="settings-page">
