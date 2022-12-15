@@ -40,18 +40,7 @@ textarea{
     font-size: 1rem;
     height: 5em;
 }
-button{
-    border: 0;
-    background-color: #2200bb;
-    color: #ffffff;
-    font-size: 1.35rem;
-    line-height: 1rem;
-    border-radius: 1em;
-    padding: 0.6em 1.25em;
-}
-button:hover{
-    box-shadow: 0px 0px 15px rgba(34,0,187,0.5);
-}
+
 legend{
     font-size: 1.3em;
 }
