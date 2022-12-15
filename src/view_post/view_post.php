@@ -193,6 +193,8 @@ else
                 <?php else: ?>
                   <p id="no-bids-message" >There are No Bids yet </p>
                 <?php endif; ?>
+              <?php else: ?>
+                <p id="no-bids-message">Freelancers can directly Contact you, Check your Inbox!</p>
               <?php endif; ?>
             <?php endif; ?>
 
