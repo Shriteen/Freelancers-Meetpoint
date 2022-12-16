@@ -77,6 +77,7 @@ if(!$db_suggestion_result)
 
         <?php if($db_post_result->num_rows > 0): ?>
           <div id="previous-posts-section" class="card">
+           <p>Posted by You</p>
            <ul id="previous-posts">
            <?php for($i=0;
                       $i < $db_post_result->num_rows;
@@ -84,7 +85,7 @@ if(!$db_suggestion_result)
             <?php $post_row= $db_post_result->fetch_assoc();
             ?>
             <li class="previous-post-list-item">
-              <a href="/view_post/view_post.php?id=<?php echo urlencode($post_row['ID']) ?>"> <?php echo $post_row['PROJECT_NAME'].':'.$post_row['REQUIRED_SKILL'] ?> </a>
+              <a class="previous-post-link" href="/view_post/view_post.php?id=<?php echo urlencode($post_row['ID']) ?>"> <?php echo $post_row['PROJECT_NAME'].' : '.$post_row['REQUIRED_SKILL'] ?> </a>
             </li>
 
             <?php endfor ?>
