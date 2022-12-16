@@ -40,6 +40,12 @@ $db_location_result=$db->query($db_query_for_location);
 if(!$db_location_result)
   die('Query Error');
 
+$db_query_for_profession=sprintf("SELECT PROFESSION FROM FREELANCER");
+
+$db_profession_result=$db->query($db_query_for_profession);
+  if(!$db_profession_result)
+	die('Query Error');
+
 ?>
 
 <!DOCTYPE html>
@@ -213,7 +219,7 @@ if(!$db_location_result)
 
 	<!-- Datalist for location shared between employer and freelancer -->
 	<datalist id="location-list">
-	  <!-- TODO: fill datalist using js -->
+	  
 	  <?php 
 		for($i=0;$i < $db_location_result->num_rows;$i++)
 		{
@@ -225,7 +231,15 @@ if(!$db_location_result)
 	</datalist>
 	<!-- Datalist for profession used for freelancer -->
 	<datalist id="profession-list">
-	  <!-- TODO: fill datalist using js -->
+	  
+	  <?php 
+		for($i=0;$i < $db_profession_result->num_rows;$i++)
+		{
+			$profession_row= $db_profession_result->fetch_assoc();
+			echo "<option value='".$profession_row['PROFESSION']."'>".$profession_row['PROFESSION']."</option>";
+		}
+	  ?>
+
 	</datalist>
 	
       </form>
