@@ -29,6 +29,7 @@ if(!$db_suggestion_result)
     <link href="/global/search_common_styles.css" rel="stylesheet">     
     <link href="style.css" rel="stylesheet">
     <script src="/global/account_info_widget.js" defer></script> 
+    <script src="script.js" defer></script> 
   </head>
   
   <body>
