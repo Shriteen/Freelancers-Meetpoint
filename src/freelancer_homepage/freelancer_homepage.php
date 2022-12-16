@@ -69,7 +69,7 @@ if(!$db_suggestion_result)
                 <?php echo $suggestion_row['REQUIRED_SKILL'] ?>
                 </p>
                 <p class="freelancer-search-employer-line result-subsubtitle">
-                By <img src='<?php echo $pic ?>' width="30px" height="30px" > <?php echo $row['NAME'] ?>           
+                By <img src='<?php echo $pic ?>' width="30px" height="30px" > <?php echo $suggestion_row['NAME'] ?>
                 </p>
                 <p class="freelancer-search-result-description">
                 <?php echo $suggestion_row['DESCRIPTION'] ?>
