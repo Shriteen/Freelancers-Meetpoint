@@ -141,7 +141,6 @@ $db_profession_result=$db->query($db_query_for_profession);
 	      <!-- Profile picture -->
 	      <label for="employer-signup-profile-picture">Profile Picture</label>
 	      <input type="file" id="employer-signup-profile-picture" name="account-profile-picture" accept=".jpg, .jpeg, .png" required>
-	      <!-- TODO: Replace the following label with name of the file using js -->
 	      <label for="employer-signup-profile-picture" class="filepicker-button" id="employer-signup-profile-picture-filepicker-button">Pick a file [ jpg/png ]</label>
 	    </li>
 	    
@@ -166,7 +165,6 @@ $db_profession_result=$db->query($db_query_for_profession);
 	      <!-- Profile picture -->
 	      <label for="freelancer-signup-profile-picture">Profile Picture</label>
 	      <input type="file" id="freelancer-signup-profile-picture" name="account-profile-picture" accept=".jpg, .jpeg, .png" required>
-	      <!-- TODO: Replace the following label with name of the file using js -->
 	      <label for="freelancer-signup-profile-picture" class="filepicker-button" id="freelancer-signup-profile-picture-filepicker-button">Pick a file [ jpg/png ]</label>
 	    </li>
 
