@@ -30,3 +30,31 @@
     margin: 0.1em;
 }
 
+#previous-posts-section{
+    padding: 1em;
+    font-size: 1.1em;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+#previous-posts-section p{
+    margin: 0;
+}
+
+#previous-posts{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#previous-posts li{
+    padding: 0.25em;
+    font-size: 1.2em;
+}
+
+a.previous-post-link{
+    text-decoration: none;
+    color: #2200bb;
+}
+a.previous-post-link:hover{
+    text-decoration: underline;
+}

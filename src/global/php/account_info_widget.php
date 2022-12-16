@@ -74,6 +74,17 @@ else
       </li>
     </a>
 
+<?php if($LOGGED_IN and $ACCOUNT_TYPE=='freelancer') : ?>
+    <!-- profile page -->
+    <a href="/profile_page/profile_page.php?user=<?php echo urlencode($USERNAME) ?>">
+      <li class="menu-item">
+        <img src="/global/assets/unknown_person_profile_icon.svg" height="20px">
+        <span>Profile</span>
+      </li>
+    </a>
+<?php endif; ?>
+    
+    
     <!-- logout -->
     <a href="/global/php/logout.php">
       <li class="menu-item">
@@ -81,8 +92,8 @@ else
         <span>Logout</span>
       </li>
     </a>
-    
-    
+
+
 <?php
     // call hook to add items to menu, they should be in above template format
     if(function_exists('add_to_menu_hook'))

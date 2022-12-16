@@ -44,7 +44,8 @@ main{
     border-radius: 50%;
 }
 
-.search-results a{
+.search-results a,
+#suggestions a{
     color: rgba(0,0,0,0.80);
     text-decoration: none;
 }
