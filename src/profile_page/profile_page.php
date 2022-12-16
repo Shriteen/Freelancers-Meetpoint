@@ -185,10 +185,12 @@ WHERE REVIEWEE='%s' ;",
                 <?php echo $baseinfo['LOCATION'] ?>
               </p>
             </div>
-            <!-- contact-button -->
+            <?php if($ACCOUNT_TYPE=="employer"): ?>
+            <!-- contact-button shown only for employers -->
             <div id="contact-button-box">
               <a href="<?php echo $mail ?>" class="contact-button freelancer-contact-button" > Contact </a>
-            </div>    
+            </div>
+            <?php endif; ?>
           </div>
         </div>
 
@@ -233,7 +235,7 @@ WHERE REVIEWEE='%s' ;",
 	          <input type="number" id="review-rating-input" name="rating" min="0.5" max="5" step="0.5" required hidden>
             </li>
             <li id="review-submit-button-container">
-              <button type="submit" id="review-submit-button">Post Review</button>
+              <button type="submit" id="review-submit-button">Review</button>
             </li>
             <li id="review-description-container">
 	          <textarea id="review-description" name="description" placeholder="Write a review.."></textarea>
