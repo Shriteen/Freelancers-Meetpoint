@@ -59,12 +59,12 @@ if(!$db_suggestion_result)
 
         <!--TODO:suggestions should be filled using php-->
         <div id="suggestions">
-        <?php for($i=0;
-                      $i < $db_suggestion_result->num_rows;
-                      $i++): ?>
-          <?php $suggestion_row= $db_suggestion_result->fetch_assoc();
-          ?>
-          <button class="suggestion-button"><?php echo $suggestion_row['PROFESSION'] ?>  </button>
+        <?php
+            for($i=0;
+                $i < $db_suggestion_result->num_rows;
+                $i++):
+            $suggestion_row= $db_suggestion_result->fetch_assoc(); ?>
+          <button class="suggestion-button"><?php echo $suggestion_row['PROFESSION'] ?></button>
                       
         <?php endfor ?>
         </div>
