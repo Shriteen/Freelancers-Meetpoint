@@ -32,6 +32,14 @@ if($cookiedata)
     }
 }
 
+$db=connect_db();
+
+$db_query_for_location=sprintf("SELECT LOCATION FROM FREELANCER UNION SELECT LOCATION FROM EMPLOYER");
+
+$db_location_result=$db->query($db_query_for_location);
+if(!$db_location_result)
+  die('Query Error');
+
 ?>
 
 <!DOCTYPE html>
@@ -206,6 +214,14 @@ if($cookiedata)
 	<!-- Datalist for location shared between employer and freelancer -->
 	<datalist id="location-list">
 	  <!-- TODO: fill datalist using js -->
+	  <?php 
+		for($i=0;$i < $db_location_result->num_rows;$i++)
+		{
+			$location_row= $db_location_result->fetch_assoc();
+			echo "<option value='".$location_row['LOCATION']."'>".$location_row['LOCATION']."</option>";
+		}
+	  ?>
+	  
 	</datalist>
 	<!-- Datalist for profession used for freelancer -->
 	<datalist id="profession-list">
