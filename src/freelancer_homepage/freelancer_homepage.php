@@ -54,7 +54,7 @@ if(!$db_suggestion_result)
         <?php if($db_suggestion_result->num_rows > 0): ?>
           
          <div id="suggestions">   
-          <p id="suggestion-message"> Suggested For You </p> 
+          <p> Suggested For You </p> 
           <?php for($i=0;
                       $i < $db_suggestion_result->num_rows;
                       $i++): ?>
@@ -75,9 +75,9 @@ if(!$db_suggestion_result)
                 <?php echo $suggestion_row['DESCRIPTION'] ?>
                 </p>
               </div>
-            </a>
-         <?php endfor; ?>     
+            </a>        
          </div>
+         <?php endfor; ?>
         <?php endif; ?>
 
       </div>  
