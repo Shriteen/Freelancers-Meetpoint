@@ -12,10 +12,11 @@ require_once __DIR__.'/../global/php/common_libs.php';
     <!-- favicon in tab -->
     <link href="../global/assets/favicon.png" rel="icon">
     <link href="../global/style.css" rel="stylesheet">
-    <link href="../global/form_common_styles.css" rel="stylesheet">    
-    <link href="style.css" rel="stylesheet">
+    <link href="../global/form_common_styles.css" rel="stylesheet">
+    <link href="../global/table_common_styles.css" rel="stylesheet">     
     <link href="../libs/eins-modal.min.css" rel="stylesheet">
     <link href="../libs/vanilla-js-tabs.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <script src="../libs/eins-modal.min.js" ></script>
     <script src="../libs/vanilla-js-tabs.min.js" ></script>
     <script src="script.js" defer></script>
@@ -65,7 +66,7 @@ require_once __DIR__.'/../global/php/common_libs.php';
 	           <label for="new-password">New Password</label>
   	           <input type="password" id="new-password" name="new-password" maxlength="100" required>
              </li>
-             <li>
+             <li class="submit-button-box">
                <button type="submit" id="change-password-submit-button">Change</button>
              </li>
            </ul>

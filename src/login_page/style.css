@@ -7,3 +7,6 @@ form a:focus{
     text-decoration: none;
 }
        
+#login-form li{
+    margin: 1rem auto;
+}

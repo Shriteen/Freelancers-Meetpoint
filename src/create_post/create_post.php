@@ -12,9 +12,7 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
     <!-- favicon in tab -->
     <link href="/global/assets/favicon.png" rel="icon">
     <link href="/global/style.css" rel="stylesheet">
-     <!-- TODO: uncomment while styling
-     <link href="/global/form_common_styles.css" rel="stylesheet">
-    -->
+    <link href="/global/form_common_styles.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <script src="/global/account_info_widget.js" defer></script> 
   </head>
@@ -51,11 +49,11 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
 
           <li>
             <!-- Description -->
-	        <label for="create-post-description">description</label>
+	        <label for="create-post-description">Description</label>
 	        <textarea id="create-post-description" name="project-description" required> </textarea>
           </li>
 
-          <li id="post-type-selector">
+          <li id="account-type-selector"> <!-- it should be post-type-selector but this is dirty hack for styling it instead of refactoring css --> 
             <input type="radio" id="bidable-true" name="bidable" value="true" required checked>
             <label for="bidable-true">Require Bids</label>
 	        <span>or</span>
@@ -63,8 +61,8 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
 	        <label for="bidable-false">Allow Direct Contact</label>
           </li>
 
-          <li>
-            <button type="submit" id="post-project-submit-button">Post</button>
+          <li class="submit-button-box">
+            <button type="submit" id="post-project-submit-button" >Post</button>
           </li>
         </ul>
       </form>      	    

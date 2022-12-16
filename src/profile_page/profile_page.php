@@ -114,7 +114,9 @@ WHERE REVIEWEE='%s' ;",
     <link href="/global/style.css" rel="stylesheet">
     <link href="/global/search_common_styles.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    <script src="/global/account_info_widget.js" defer></script>     
+    <script src="/global/account_info_widget.js" defer></script>
+    <script src="/libs/rater-js/index.js" defer></script>
+    <script src="script.js" defer></script>
   </head>
   
   <body>
@@ -168,7 +170,10 @@ WHERE REVIEWEE='%s' ;",
               <p id="profile-ratings-summary">
                 <?php $rating=get_rating_of($user);
                     if($rating)
-                        echo $rating."/5 Stars";
+                    {
+                        echo "<p class='hidden' id='profile-rating-hidden'>".$rating."</p>";
+                        echo "<div id='profile-rating'></div>";
+                    }
                     else
                         echo "No Reviews Yet";
                 ?>
@@ -187,6 +192,7 @@ WHERE REVIEWEE='%s' ;",
           </div>
         </div>
 
+        <div id="review-display-create-container">
         <?php if($review_section) : ?>
         <div id="review-display-section">
           <?php while( $rev=$review_result->fetch_assoc() ) : ?>
@@ -215,7 +221,7 @@ WHERE REVIEWEE='%s' ;",
           <?php endwhile; ?>
         </div>
         <?php endif; ?>
-
+        
 
         <?php if($ACCOUNT_TYPE=='employer') : ?>
         <!-- write review section -->
@@ -223,8 +229,8 @@ WHERE REVIEWEE='%s' ;",
           <form action="review_handle.php" method="post">
           <ul>
             <li>
-	          <label for="review-rating-input">Rating</label>
-	          <input type="number" id="review-rating-input" name="rating" min="0.5" max="5" step="0.5" required>
+              <div id="rater"></div>
+	          <input type="number" id="review-rating-input" name="rating" min="0.5" max="5" step="0.5" required hidden>
             </li>
             <li id="review-submit-button-container">
               <button type="submit" id="review-submit-button">Post Review</button>
@@ -238,7 +244,8 @@ WHERE REVIEWEE='%s' ;",
           </form>
         </div>
         <?php endif; ?>
-
+        </div>
+    
         <?php if(($exp_text_result->num_rows+$exp_link_result->num_rows+$exp_image_result->num_rows) > 0 ) :?>
           <!-- any experience data exists -->
           <div class="experience-gallery-section">

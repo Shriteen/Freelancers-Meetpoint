@@ -20,8 +20,10 @@ function present_manage() { ?>
     <form id="delete-user-form">
       <input type="password" maxlength="100" name="admin-password" required>
       <input type="text" name="account-type" required hidden >
-      <input type="text" name="username" required hidden >        
+      <input type="text" name="username" required hidden >
+      <div class="submit-button-box" id="submit-button-box">
       <button type="submit" id="delete-user-submit" class="eins-modal-close-button">Delete</button>
+      </div>  
     </form>    
   </div>
 </div>

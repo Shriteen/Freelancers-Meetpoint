@@ -2,10 +2,14 @@
 // present to user, data is queried by javascript
 function present() { ?>
     <div id="stat-period-selector">
+      <div id="stat-period-start">  
         <label for="start-date" >Start Date</label>  
         <input type="date" name="start-date" >
+      </div>                               
+      <div id="stat-period-end">
         <label for="end-date" >End Date</label>   
         <input type="date" name="end-date" >
+      </div>                             
     </div>
     <div id="statistics-data-section">
       <div id="freelancer-account-count">

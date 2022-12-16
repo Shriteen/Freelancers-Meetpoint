@@ -12,7 +12,7 @@
     background-image: url("../global/assets/plus_sign.png");
     background-size: 1em;
     font-size: 0.85em;
-    margin: 0.05em;
+    margin: 0.2em auto;
 }
 
 /* background image of arrow to submit buttons */
@@ -21,12 +21,10 @@
     background-image: url("../global/assets/arrow_right.png");
 }
 
-/* styling for inputs of add experience widget */
-#freelancer-signup-experience .text-or-link{
-    margin: 0.5em;
-}
-#freelancer-signup-experience .file{
-    margin: 0.5em auto;
+/* let add experience buttons be in flex */
+#add-experience-buttons{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* styling for charges input widget */
@@ -54,7 +52,8 @@ label#assurance-label-for-maximum{
 
 /* common text styling for the fieldsets */
 #freelancer-signup-charges,
-#freelancer-signup-experience{
+#freelancer-signup-experience,
+.experience-list-item{
     padding: 1em;
     border: 1px solid #dfdfdf;
     border-radius: 1em;    
@@ -65,4 +64,6 @@ label#assurance-label-for-maximum{
     font-size: 0.75em;
 }
 
-
+.name-label{
+    color: #2200bb;
+}

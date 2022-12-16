@@ -77,3 +77,13 @@ main{
     margin: 0.5em;
 }
 
+.search-error-message{
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.5em
+}
+
+#search-query-in-error{
+    text-decoration: underline;
+    font-style: italic;
+}

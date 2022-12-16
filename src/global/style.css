@@ -116,9 +116,11 @@ header img[src$="svg"]{
     border: none;
     border-radius: 0.4rem;
     padding: 0.5em;
+    background-color: transparent;
 }
 #hamburger-menu-close:hover,.menu-item:hover{
     background-color: rgba(0,0,0,0.2);
+    box-shadow: none;
 }
 
 #hamburger-menu ul{
@@ -151,4 +153,29 @@ header img[src$="svg"]{
     border-radius: 1em;
     background-color: #ffffff;
     box-shadow: 0.5em 0.5em 1em rgba(0,0,0,0.5);
+}
+
+
+button,
+.contact-button{
+    border: 0;
+    background-color: #2200bb;
+    color: #ffffff;
+    font-size: 1.35rem;
+    line-height: 1rem;
+    border-radius: 1em;
+    padding: 0.6em 1.25em;
+}
+button:hover,
+.contact-button:hover{
+    box-shadow: 0px 0px 15px rgba(34,0,187,0.5);
+}
+
+a.contact-button{
+    font-size: 1em;
+    line-height: 2em;
+    text-decoration: none;
+    display: block;
+    max-width: max-content;
+    margin: auto;
 }

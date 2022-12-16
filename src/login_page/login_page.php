@@ -82,7 +82,7 @@ if($cookiedata)
 	    <input type="password" id="login-account-password" name="account-password" maxlength="100" required>
           </li>
 
-          <li>
+          <li class="submit-button-box">
             <button type="submit" id="login-button">Log In</button>
           </li>
 
