@@ -7,8 +7,8 @@
 	<input type="password" id="admin-password" name="admin-password" maxlength="100" required>
       </li>
 
-      <li>
-        <button type="submit" id="login-button">Log In</button>
+      <li class="submit-button-box">
+        <button type="submit" id="login-button" >Log In</button>
       </li>
     </ul>
   </form>

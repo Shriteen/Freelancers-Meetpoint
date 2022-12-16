@@ -1,0 +1,63 @@
+.js-tabs{
+    margin: 1em;
+}
+
+a.js-tabs__title{
+    text-decoration: none;
+    color: #2200bb;
+    font-size: 1.1em;
+}
+
+a.js-tabs__title-active{
+    font-weight: bold;
+}
+
+#tabs>div{
+    background-color: #ffffff;
+}
+
+#stat-period-selector{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#stat-period-selector label{
+    margin: auto 1em;
+}
+
+#stat-period-selector>div{
+    flex: 1;
+    margin: 0 1em;
+}
+
+
+#statistics-data-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#statistics-data-section>div{
+    border: 1px solid rgba(34, 0, 187,0.5);
+    border-radius: 1em;
+    margin: 0.5em;
+    padding: 1em;
+    text-align: center;
+}
+
+.stat-title{
+    font-size: 1.5em;
+}
+
+.stat-data{
+    font-size: 2em;
+    color: #2200bb;
+}
+
+#user-table{
+    margin: 1em;
+}
+
+#submit-button-box{
+    max-width: max-content;
+}
+

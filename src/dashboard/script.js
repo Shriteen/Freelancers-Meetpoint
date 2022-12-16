@@ -127,8 +127,8 @@ let tabs = new Tabs({
     open: 0
 } );
 
-const startDate= document.querySelector('#stat-period-selector>input[name="start-date"]');
-const endDate= document.querySelector('#stat-period-selector>input[name="end-date"]');
+const startDate= document.querySelector('#stat-period-start>input[name="start-date"]');
+const endDate= document.querySelector('#stat-period-end>input[name="end-date"]');
 //today
 endDate.value=new Date().toISOString().slice(0,10);
 // 1 year before
