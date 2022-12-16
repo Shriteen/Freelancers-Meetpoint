@@ -26,6 +26,7 @@ td:not(:last-child) {
 }
 
 tr:not(:last-child)>th,
-tr:not(:last-child)>td {
+tr:not(:last-child)>td,
+thead th{
     border-bottom: 1px solid rgba(0,0,0,0.6);
 }
