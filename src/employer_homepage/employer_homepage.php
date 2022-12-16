@@ -2,6 +2,12 @@
 
 require_once __DIR__.'/../global/php/login_from_cookie.php';
 
+$db=connect_db();
+$db_query_for_post=sprintf("SELECT*FROM POST WHERE CREATED_BY='%s'",$USERNAME);
+
+$db_post_result=$db->query($db_query_for_post);
+if(!$db_post_result)
+  die('Query Error');
 ?>
 
 
@@ -52,6 +58,24 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
         <div id="post-a-job-message">                       
           <a href="/create_post/create_post.php">Post a Job</a>
         </div>
+
+        <?php if($db_post_result->num_rows > 0): ?>
+          <div id="previous-posts-section" class="card">
+           <ul id="previous-posts">
+           <?php for($i=0;
+                      $i < $db_post_result->num_rows;
+                      $i++): ?>
+            <?php $post_row= $db_post_result->fetch_assoc();
+            ?>
+            <li class="previous-post-list-item">
+              <a href="/view_post/view_post.php?id=<?php echo urlencode($post_row['ID']) ?>"> <?php echo $post_row['PROJECT_NAME'].':'.$post_row['REQUIRED_SKILL'] ?> </a>
+            </li>
+
+            <?php endfor ?>
+           </ul>
+          </div>
+
+        <?php endif; ?> 
 
       </div>  
 	    
