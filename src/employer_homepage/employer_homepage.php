@@ -8,6 +8,13 @@ $db_query_for_post=sprintf("SELECT*FROM POST WHERE CREATED_BY='%s'",$USERNAME);
 $db_post_result=$db->query($db_query_for_post);
 if(!$db_post_result)
   die('Query Error');
+
+$db_query_for_suggestion=sprintf("SELECT PROFESSION FROM FREELANCER ORDER BY RAND() LIMIT 3");
+
+$db_suggestion_result=$db->query($db_query_for_suggestion);
+if(!$db_suggestion_result)
+  die('Query Error');
+
 ?>
 
 
@@ -50,7 +57,15 @@ if(!$db_post_result)
         </form>
 
         <!--TODO:suggestions should be filled using php-->
-        <div id="suggestions">               
+        <div id="suggestions">
+        <?php for($i=0;
+                      $i < $db_suggestion_result->num_rows;
+                      $i++): ?>
+          <?php $suggestion_row= $db_suggestion_result->fetch_assoc();
+          ?>
+          <button class="suggestion-button"><?php echo $suggestion_row['PROFESSION'] ?>  </button>
+                      
+        <?php endfor ?>
         </div>
 
         <p id='seperator'>OR</p>                         
