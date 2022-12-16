@@ -101,7 +101,6 @@ function deleteUser(e)
     console.log(e.target);
     var data=new FormData(e.target);
 
-    //TODO: confirm working backend
     fetch("deleteUser.php", {
 	method: "post",
 	body: data

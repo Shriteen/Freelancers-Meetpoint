@@ -132,7 +132,6 @@ else
 
           <div class="post-interactive-section card" >    
 
-             <!-- TODO: following view should change for employer and freelancers differently -->
             <?php if( $ACCOUNT_TYPE == 'freelancer' ) : ?>
               <!-- freelancer is viewing -->
               <?php if($row['ALLOW_BIDS']) : ?>

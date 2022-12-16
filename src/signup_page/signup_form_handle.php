@@ -175,8 +175,6 @@ function validate() {
         else
             display_error('Please provide maximum charges');
 
-        //TODO: Experience validation
-
         $i=0;
         while(isset($_REQUEST['account-experience-text-'.$i]))
         {

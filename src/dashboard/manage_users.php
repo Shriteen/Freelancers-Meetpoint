@@ -16,7 +16,7 @@ function present_manage() { ?>
 <div id="confirm-prompt" class="eins-modal">
   <div class="eins-modal-content">
     <div class="eins-modal-close"></div>
-    <p>Are you sure you want to delete <span id="popup-username">TODO </span> ? Enter Admin Password to confirm</p>  
+    <p>Are you sure you want to delete <span id="popup-username"></span> ? Enter Admin Password to confirm</p>  
     <form id="delete-user-form">
       <input type="password" maxlength="100" name="admin-password" required>
       <input type="text" name="account-type" required hidden >
