@@ -7,9 +7,9 @@
 }
 
 #post-a-job-message,
-.suggestion-button{
+#suggestions{
     max-width: max-content;
-    margin: 2em auto;    
+    margin: 2em auto;
 }
 
 #post-a-job-message a:hover,
@@ -27,5 +27,6 @@
     border: 2px solid #ffffff; 
     border-radius: 1em;
     text-decoration: none;
+    margin: 0.1em;
 }
 
