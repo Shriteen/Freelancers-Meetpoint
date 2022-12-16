@@ -1,25 +1,32 @@
 #seperator,
-#post-a-job-message a {
+#post-a-job-message a ,
+.suggestion-button{
   color: #ffffff;
   text-align: center;
   font-size: 1.2em
 }
 
-#post-a-job-message{
+#post-a-job-message,
+#suggestions{
     max-width: max-content;
-    margin: 2em auto;    
+    margin: 2em auto;
 }
 
 #post-a-job-message a:hover,
-#post-a-job-message a:focus
+#post-a-job-message a:focus,
+.suggestion-button:hover,
+.suggestion-button:focus
 {
     color: #2200bb;
     background-color: #ffffff;
 }
 
-#post-a-job-message a{
+#post-a-job-message a,
+.suggestion-button{
     padding: 0.5em 2em;
     border: 2px solid #ffffff; 
     border-radius: 1em;
     text-decoration: none;
+    margin: 0.1em;
 }
+

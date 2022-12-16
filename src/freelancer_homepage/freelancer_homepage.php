@@ -2,6 +2,14 @@
 
 require_once __DIR__.'/../global/php/login_from_cookie.php';
 
+$db=connect_db();
+$db_query_for_suggestion=sprintf("SELECT POST.*,NAME,PROFILE_PIC FROM
+POST JOIN EMPLOYER ON POST.CREATED_BY=EMPLOYER.USERNAME ORDER BY RAND() LIMIT 3");
+
+$db_suggestion_result=$db->query($db_query_for_suggestion);
+if(!$db_suggestion_result)
+  die('Query Error');
+
 ?>
 
 
@@ -43,8 +51,34 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
         </form>
 
         <!--TODO: suggestions should be filled using php-->
-        <div id="suggestions">               
-        </div>
+        <?php if($db_suggestion_result->num_rows > 0): ?>
+          
+         <div id="suggestions">   
+          <p> Suggested For You </p> 
+          <?php for($i=0;
+                      $i < $db_suggestion_result->num_rows;
+                      $i++): ?>
+          <?php $suggestion_row= $db_suggestion_result->fetch_assoc();
+          ?>
+            <a href="/view_post/view_post.php?id=<?php echo urlencode($suggestion_row['ID']) ?>">
+              <div class="card search-result-card freelancer-search-result-card" >
+                <p class="freelancer-search-result-project-name result-title">
+                <?php echo $suggestion_row['PROJECT_NAME'] ?>
+                </p>
+                <p class="freelancer-search-result-requirement result-subtitle">
+                <?php echo $suggestion_row['REQUIRED_SKILL'] ?>
+                </p>
+                <p class="freelancer-search-employer-line result-subsubtitle">
+                By <img src='<?php echo $pic ?>' width="30px" height="30px" > <?php echo $row['NAME'] ?>           
+                </p>
+                <p class="freelancer-search-result-description">
+                <?php echo $suggestion_row['DESCRIPTION'] ?>
+                </p>
+              </div>
+            </a>        
+         </div>
+         <?php endfor; ?>
+        <?php endif; ?>
 
       </div>  
 	    

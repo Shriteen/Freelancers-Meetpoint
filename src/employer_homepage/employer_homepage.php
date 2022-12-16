@@ -2,6 +2,19 @@
 
 require_once __DIR__.'/../global/php/login_from_cookie.php';
 
+$db=connect_db();
+$db_query_for_post=sprintf("SELECT*FROM POST WHERE CREATED_BY='%s'",$USERNAME);
+
+$db_post_result=$db->query($db_query_for_post);
+if(!$db_post_result)
+  die('Query Error');
+
+$db_query_for_suggestion=sprintf("SELECT PROFESSION FROM FREELANCER ORDER BY RAND() LIMIT 3");
+
+$db_suggestion_result=$db->query($db_query_for_suggestion);
+if(!$db_suggestion_result)
+  die('Query Error');
+
 ?>
 
 
@@ -16,6 +29,7 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
     <link href="/global/search_common_styles.css" rel="stylesheet">     
     <link href="style.css" rel="stylesheet">
     <script src="/global/account_info_widget.js" defer></script> 
+    <script src="script.js" defer></script> 
   </head>
   
   <body>
@@ -44,7 +58,15 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
         </form>
 
         <!--TODO:suggestions should be filled using php-->
-        <div id="suggestions">               
+        <div id="suggestions">
+        <?php for($i=0;
+                      $i < $db_suggestion_result->num_rows;
+                      $i++): ?>
+          <?php $suggestion_row= $db_suggestion_result->fetch_assoc();
+          ?>
+          <button class="suggestion-button"><?php echo $suggestion_row['PROFESSION'] ?>  </button>
+                      
+        <?php endfor ?>
         </div>
 
         <p id='seperator'>OR</p>                         
@@ -52,6 +74,24 @@ require_once __DIR__.'/../global/php/login_from_cookie.php';
         <div id="post-a-job-message">                       
           <a href="/create_post/create_post.php">Post a Job</a>
         </div>
+
+        <?php if($db_post_result->num_rows > 0): ?>
+          <div id="previous-posts-section" class="card">
+           <ul id="previous-posts">
+           <?php for($i=0;
+                      $i < $db_post_result->num_rows;
+                      $i++): ?>
+            <?php $post_row= $db_post_result->fetch_assoc();
+            ?>
+            <li class="previous-post-list-item">
+              <a href="/view_post/view_post.php?id=<?php echo urlencode($post_row['ID']) ?>"> <?php echo $post_row['PROJECT_NAME'].':'.$post_row['REQUIRED_SKILL'] ?> </a>
+            </li>
+
+            <?php endfor ?>
+           </ul>
+          </div>
+
+        <?php endif; ?> 
 
       </div>  
 	    
