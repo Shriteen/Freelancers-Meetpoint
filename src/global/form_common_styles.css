@@ -86,6 +86,14 @@ fieldset li{
     color: #000000;
 }
 
+#account-type-selector label:hover{
+    transform: scale(1.1);
+}
+
+#account-type-selector label{
+    transition: transform 0.3s ease-in-out;
+}
+
 /* style file input differently */
 input[type="file"]{
     display: none;

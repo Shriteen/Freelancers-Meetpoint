@@ -38,7 +38,13 @@ main{
 
 .search-result-card{
     margin: 1em auto;
+    transition: transform 0.3s ease-in-out;
 }
+
+.search-result-card:hover{
+    transform: scale(1.02);
+}
+
 
 .search-result-card img{
     border-radius: 50%;

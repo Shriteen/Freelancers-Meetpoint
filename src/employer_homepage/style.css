@@ -28,6 +28,9 @@
     border-radius: 1em;
     text-decoration: none;
     margin: 0.1em;
+
+    transition: background 0.5s linear;
+
 }
 
 #previous-posts-section{
