@@ -2,6 +2,10 @@ body{
     background-color: #ffffff;
 }
 
+header{
+    background-color: #2200bb;    
+}
+
 .info-quote{
     padding: 3em 2em;
 }

@@ -10,7 +10,6 @@ body{
 }
 
 header {
-    background-color: #2200bb;
     display: flex;
     justify-content: space-between;
     align-items: center;
