@@ -1,6 +1,6 @@
 .freelancer-search-result-card{
     padding: 1em;
-    max-height: 10em;
+    max-height: fit-content;
 }
 
 .freelancer-search-result-description{
