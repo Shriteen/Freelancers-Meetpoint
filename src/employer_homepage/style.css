@@ -12,6 +12,12 @@
     margin: 2em auto;
 }
 
+#suggestions{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 #post-a-job-message a:hover,
 #post-a-job-message a:focus,
 .suggestion-button:hover,
