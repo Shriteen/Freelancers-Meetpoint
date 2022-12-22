@@ -9,7 +9,7 @@ $db_post_result=$db->query($db_query_for_post);
 if(!$db_post_result)
   die('Query Error');
 
-$db_query_for_suggestion=sprintf("SELECT PROFESSION FROM FREELANCER ORDER BY RAND() LIMIT 3");
+$db_query_for_suggestion=sprintf("SELECT DISTINCT PROFESSION FROM FREELANCER ORDER BY RAND() LIMIT 3");
 
 $db_suggestion_result=$db->query($db_query_for_suggestion);
 if(!$db_suggestion_result)
