@@ -36,7 +36,18 @@ a.js-tabs__title-active{
     grid-template-columns: 1fr 1fr;
 }
 
-#statistics-data-section>div{
+@media screen and (min-width:1200px)
+{
+    #statistics-graph-section
+    {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+    }
+}
+
+#statistics-data-section>div,
+#statistics-graph-section>div
+{
     border: 1px solid rgba(34, 0, 187,0.5);
     border-radius: 1em;
     margin: 0.5em;
