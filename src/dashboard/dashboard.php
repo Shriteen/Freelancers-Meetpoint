@@ -16,9 +16,12 @@ require_once __DIR__.'/../global/php/common_libs.php';
     <link href="../global/table_common_styles.css" rel="stylesheet">     
     <link href="../libs/eins-modal.min.css" rel="stylesheet">
     <link href="../libs/vanilla-js-tabs.css" rel="stylesheet">
+    <link href="../libs/billboard.min.css" rel="stylesheet">     
     <link href="style.css" rel="stylesheet">
     <script src="../libs/eins-modal.min.js" ></script>
     <script src="../libs/vanilla-js-tabs.min.js" ></script>
+    <script src="../libs/d3.min.js" ></script>
+    <script src="../libs/billboard.min.js" ></script>
     <script src="script.js" defer></script>
      
   </head>
