@@ -33,6 +33,155 @@ function loadStats()
     
 }
 
+function loadGraph()
+{
+    let list=getDateIntervalList();
+    let promiseList=[];
+    
+    for(i=0; i<list.length-1; i++)
+    {
+	let url="getStatData.php?"+"start-date="+list[i]+"&"+"end-date="+list[i+1];
+	promiseList.push(
+	    fetch(url).then(
+		(response)=>{
+		    if(!response.ok) {
+			throw new Error('HTTP error: '+response.status);
+		    }
+		    return response.json();   
+		}
+	    ));	
+    }
+
+    Promise.all(promiseList).then(
+	(jsons) => {
+	    let freelancerStatList=[];
+	    let employerStatList=[];
+	    let postStatList=[];
+	    let bidStatList=[];
+	    
+	    for (const json of jsons) {
+		freelancerStatList.push(json["freelancer-account-count"]);
+		employerStatList.push(json["employer-account-count"]);
+		postStatList.push(json["post-count"]);
+		bidStatList.push(json["bid-count"]);		
+	    }
+
+	    console.log(freelancerStatList);
+	    console.log(employerStatList);
+	    console.log(postStatList);
+	    console.log(bidStatList);
+
+	    let formatStr;
+	    let period;
+	    switch(list.length)
+	    {
+		case 6:
+		period="Year";
+		formatStr="%Y";
+		break;
+		case 13:
+		period="Month";
+		formatStr="%b";
+		break;
+		case 8:
+		period="Day";
+		formatStr="%d %b";
+		break;
+	    }
+	    
+	    //create the graphs
+	    bb.generate({
+		data: {
+		    x: "x",
+		    columns: [
+			["x"].concat(list.slice(0,-1)),
+			[period].concat(freelancerStatList)
+		    ],
+		    types: {
+			period: "line",
+		    }
+		},
+		axis: {
+		    x: {
+			type: "timeseries",
+			tick: {
+			    format: formatStr
+			}
+		    }
+		},
+		bindto: "#stat-chart-freelancer"
+	    });
+
+	    bb.generate({
+		data: {
+		    x: "x",
+		    columns: [
+			["x"].concat(list.slice(0,-1)),
+			[period].concat(employerStatList)
+		    ],
+		    types: {
+			period: "line",
+		    }
+		},
+		axis: {
+		    x: {
+			type: "timeseries",
+			tick: {
+			    format: formatStr
+			}
+		    }
+		},
+		bindto: "#stat-chart-employer"
+	    });
+
+	    bb.generate({
+		data: {
+		    x: "x",
+		    columns: [
+			["x"].concat(list.slice(0,-1)),
+			[period].concat(postStatList)
+		    ],
+		    types: {
+			period: "line",
+		    }
+		},
+		axis: {
+		    x: {
+			type: "timeseries",
+			tick: {
+			    format: formatStr
+			}
+		    }
+		},
+		bindto: "#stat-chart-post"
+	    });
+	    
+	    bb.generate({
+		data: {
+		    x: "x",
+		    columns: [
+			["x"].concat(list.slice(0,-1)),
+			[period].concat(bidStatList)
+		    ],
+		    types: {
+			period: "line",
+		    }
+		},
+		axis: {
+		    x: {
+			type: "timeseries",
+			tick: {
+			    format: formatStr
+			}
+		    }
+		},
+		bindto: "#stat-chart-bid"
+	    });
+	    
+	}
+    );
+}
+
 function loadUsers(pattern)
 {
     fetch('getUserData.php?pattern='+pattern).then(
@@ -121,6 +270,57 @@ function deleteUser(e)
     e.preventDefault();
 }
 
+function getDateIntervalList()
+{
+    switch(periodSelector.value)
+    {
+	case 'years':
+	//get last 5 years
+	return [new Date().getFullYear()-4 + "-01-01",
+		new Date().getFullYear()-3 + "-01-01",
+		new Date().getFullYear()-2 + "-01-01",
+		new Date().getFullYear()-1 + "-01-01",
+		new Date().getFullYear() + "-01-01",
+		new Date().getFullYear()+1 + "-01-01" ];
+	case 'months':
+	//get current year
+	return [new Date().getFullYear() + "-01-01",
+		new Date().getFullYear() + "-02-01" ,
+		new Date().getFullYear() + "-03-01",
+		new Date().getFullYear() + "-04-01" ,
+		new Date().getFullYear() + "-05-01" ,
+		new Date().getFullYear() + "-06-01" ,
+		new Date().getFullYear() + "-07-01" ,
+		new Date().getFullYear() + "-08-01" ,
+		new Date().getFullYear() + "-09-01",
+		new Date().getFullYear() + "-10-01" ,
+		new Date().getFullYear() + "-11-01",
+		new Date().getFullYear() + "-12-01",
+		new Date().getFullYear()+1 + "-01-01" 
+	       ];
+	case 'days':
+	let d=new Date();
+	let li=[];
+	d.setDate(d.getDate()-7);
+	li.push(d.toISOString().slice(0,10));
+	d.setDate(d.getDate()+1);
+	li.push(d.toISOString().slice(0,10));
+	d.setDate(d.getDate()+1);
+	li.push(d.toISOString().slice(0,10));
+	d.setDate(d.getDate()+1);
+	li.push(d.toISOString().slice(0,10));
+	d.setDate(d.getDate()+1);
+	li.push(d.toISOString().slice(0,10));
+	d.setDate(d.getDate()+1);
+	li.push(d.toISOString().slice(0,10));
+	d.setDate(d.getDate()+1);
+	li.push(d.toISOString().slice(0,10));
+	d.setDate(d.getDate()+1);
+	li.push(d.toISOString().slice(0,10));
+	return li;
+    }    
+}
+
 let tabs = new Tabs({
     elem: 'tabs',
     open: 0
@@ -136,7 +336,11 @@ startDate.value=new Date().getFullYear()-1 + new Date().toISOString().slice(4,10
 startDate.addEventListener('change',loadStats);
 endDate.addEventListener('change',loadStats);
 
+const periodSelector= document.querySelector('#time-scale');
+periodSelector.addEventListener('change',loadGraph);
+
 loadStats();
+loadGraph();
 loadUsers('');
 
 const userFilter= document.querySelector('#user-search');
