@@ -94,7 +94,9 @@ function loadGraph()
 		data: {
 		    x: "x",
 		    columns: [
-			["x"].concat(list.slice(0,-1)),
+			["x"].concat( (period==='Day') ?
+				      list.slice(1)    :
+				      list.slice(0,-1) ) ,
 			[period].concat(freelancerStatList)
 		    ],
 		    types: {
@@ -116,7 +118,9 @@ function loadGraph()
 		data: {
 		    x: "x",
 		    columns: [
-			["x"].concat(list.slice(0,-1)),
+			["x"].concat( (period==='Day') ?
+				      list.slice(1)    :
+				      list.slice(0,-1) ),
 			[period].concat(employerStatList)
 		    ],
 		    types: {
@@ -138,7 +142,9 @@ function loadGraph()
 		data: {
 		    x: "x",
 		    columns: [
-			["x"].concat(list.slice(0,-1)),
+			["x"].concat( (period==='Day') ?
+				      list.slice(1)    :
+				      list.slice(0,-1) ),
 			[period].concat(postStatList)
 		    ],
 		    types: {
@@ -160,7 +166,9 @@ function loadGraph()
 		data: {
 		    x: "x",
 		    columns: [
-			["x"].concat(list.slice(0,-1)),
+			["x"].concat( (period==='Day') ?
+				      list.slice(1)    :
+				      list.slice(0,-1) ),
 			[period].concat(bidStatList)
 		    ],
 		    types: {
