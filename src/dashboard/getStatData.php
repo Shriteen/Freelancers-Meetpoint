@@ -7,7 +7,7 @@ $end=$_GET['end-date'];
 
 $db= connect_db();
 
-$e_accounts_res= $db->query(sprintf("SELECT COUNT(USERNAME) as c FROM EMPLOYER WHERE DATE(CREATED_ON)>='%s' AND DATE(CREATED_ON)<='%s'",
+$e_accounts_res= $db->query(sprintf("SELECT COUNT(USERNAME) as c FROM EMPLOYER WHERE DATE(CREATED_ON)>'%s' AND DATE(CREATED_ON)<='%s'",
                                     $db->real_escape_string($start),
                                     $db->real_escape_string($end) ) );
 
@@ -23,7 +23,7 @@ if($e_accounts_res)
 else
     die('Query Error');
 
-$f_accounts_res= $db->query(sprintf("SELECT COUNT(USERNAME) as c FROM FREELANCER WHERE DATE(CREATED_ON)>='%s' AND DATE(CREATED_ON)<='%s'",
+$f_accounts_res= $db->query(sprintf("SELECT COUNT(USERNAME) as c FROM FREELANCER WHERE DATE(CREATED_ON)>'%s' AND DATE(CREATED_ON)<='%s'",
                                     $db->real_escape_string($start),
                                     $db->real_escape_string($end) ) );
 
@@ -39,7 +39,7 @@ if($f_accounts_res)
 else
     die('Query Error');
 
-$post_res= $db->query(sprintf("SELECT COUNT(ID) as c FROM POST WHERE DATE(CREATED_ON)>='%s' AND DATE(CREATED_ON)<='%s'",
+$post_res= $db->query(sprintf("SELECT COUNT(ID) as c FROM POST WHERE DATE(CREATED_ON)>'%s' AND DATE(CREATED_ON)<='%s'",
                               $db->real_escape_string($start),
                               $db->real_escape_string($end) ) );
 
@@ -55,7 +55,7 @@ if($post_res)
 else
     die('Query Error');
 
-$bid_res= $db->query(sprintf("SELECT COUNT(DISTINCT FREELANCER_USERNAME,POST_ID) as c FROM BIDS_FOR WHERE DATE(TIME_STAMP)>='%s' AND DATE(TIME_STAMP)<='%s'",
+$bid_res= $db->query(sprintf("SELECT COUNT(DISTINCT FREELANCER_USERNAME,POST_ID) as c FROM BIDS_FOR WHERE DATE(TIME_STAMP)>'%s' AND DATE(TIME_STAMP)<='%s'",
                              $db->real_escape_string($start),
                              $db->real_escape_string($end) ) );
 

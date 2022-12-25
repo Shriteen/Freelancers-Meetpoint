@@ -23,7 +23,7 @@ fieldset{
 }
 
 /* improve appearance */
-input,textarea{
+input,textarea,select{
     border: 0px;
     background-color: #dfdfdf;
     color: rgba(0,0,0,0.75);
