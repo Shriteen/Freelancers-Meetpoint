@@ -50,7 +50,6 @@ if(!$db_suggestion_result)
           </div>
         </form>
 
-        <!--TODO: suggestions should be filled using php-->
         <?php if($db_suggestion_result->num_rows > 0): ?>
           
          <div id="suggestions">   

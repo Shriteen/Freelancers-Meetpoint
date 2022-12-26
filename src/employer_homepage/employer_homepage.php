@@ -57,7 +57,6 @@ if(!$db_suggestion_result)
           </div>
         </form>
 
-        <!--TODO:suggestions should be filled using php-->
         <div id="suggestions">
         <?php
             for($i=0;
