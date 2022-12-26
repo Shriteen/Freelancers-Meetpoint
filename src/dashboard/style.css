@@ -64,8 +64,8 @@ a.js-tabs__title-active{
     color: #2200bb;
 }
 
-#user-table{
-    margin: 1em;
+#user-search{
+    margin: 0.5em 0;
 }
 
 #submit-button-box{

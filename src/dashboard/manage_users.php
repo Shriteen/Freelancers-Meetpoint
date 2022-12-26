@@ -2,15 +2,31 @@
 
 function present_manage() { ?>
 
+<select id="user-type-select-menu">
+  <option value="employer">Employer</option>
+  <option value="freelancer">Freelancer</option>
+</select>
+        
 <input type="search" name="user-search" id="user-search" placeholder="search for a user">
-<table id="user-table" >
+
+<table id="employer-table" >
   <thead>      
     <tr><th>Account Type</th><th>Name</th><th>Username</th><th>Delete</th></tr>
   </thead>
-  <tbody id="user-table-body">
+  <tbody class="user-table-body">
 
   </tbody>
 </table>
+
+<table id="freelancer-table" >
+  <thead>      
+    <tr><th>Account Type</th><th>Name</th><th>Username</th><th>Profession</th><th>Delete</th></tr>
+  </thead>
+  <tbody class="user-table-body">
+
+  </tbody>
+</table>
+
 
 <!-- popup -->
 <div id="confirm-prompt" class="eins-modal">

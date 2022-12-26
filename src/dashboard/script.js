@@ -66,10 +66,6 @@ function loadGraph()
 		bidStatList.push(json["bid-count"]);		
 	    }
 
-	    console.log(freelancerStatList);
-	    console.log(employerStatList);
-	    console.log(postStatList);
-	    console.log(bidStatList);
 
 	    let formatStr;
 	    let period;
@@ -190,9 +186,9 @@ function loadGraph()
     );
 }
 
-function loadUsers(pattern)
-{
-    fetch('getUserData.php?pattern='+pattern).then(
+function loadUsers(pattern,actype)
+{    
+    fetch('getUserData.php?pattern='+pattern+'&type='+actype).then(
 	(response) => {
 	    if(!response.ok) {
 		throw new Error('HTTP error: '+response.status);
@@ -202,7 +198,7 @@ function loadUsers(pattern)
 	.then((json)=>{
 	    // data fetched
 
-	    const table= document.querySelector('#user-table-body');
+	    const table= document.querySelector('#'+actype+'-table .user-table-body');
 	    //clear previous data
 	    while(table.firstChild)
 		table.removeChild(table.firstChild);
@@ -228,6 +224,12 @@ function loadUsers(pattern)
 		row.appendChild(type);
 		row.appendChild(name);
 		row.appendChild(uname);
+		if(actype=='freelancer')
+		{
+		    let profession=document.createElement('td');
+		    profession.textContent=user['PROFESSION'];
+		    row.appendChild(profession);
+		}
 		row.appendChild(btnbox);
 		table.appendChild(row);
 
@@ -265,7 +267,7 @@ function deleteUser(e)
 	.then((res) => { return res.text(); })
 	.then((txt) => {
 	    console.log(txt);
-	    loadUsers('');
+	    loadUsers('',userTypeFilter.value);
 	    document.querySelector('#notification-message').textContent=txt;
 	    window.einsModal.open('notification');
 	})
@@ -276,6 +278,20 @@ function deleteUser(e)
 
     
     e.preventDefault();
+}
+
+function updateTableVisibility()
+{
+    if(userTypeFilter.value==="employer")
+    {
+	document.querySelector('#employer-table').style.display="table";
+	document.querySelector('#freelancer-table').style.display="none";
+    }
+    else
+    {
+	document.querySelector('#employer-table').style.display="none";
+	document.querySelector('#freelancer-table').style.display="table";
+    }
 }
 
 function getDateIntervalList()
@@ -347,12 +363,19 @@ endDate.addEventListener('change',loadStats);
 const periodSelector= document.querySelector('#time-scale');
 periodSelector.addEventListener('change',loadGraph);
 
+const userFilter= document.querySelector('#user-search');
+const userTypeFilter= document.querySelector('#user-type-select-menu');
+
 loadStats();
 loadGraph();
-loadUsers('');
+updateTableVisibility();
+loadUsers('',userTypeFilter.value);
 
-const userFilter= document.querySelector('#user-search');
-userFilter.addEventListener('change',()=> loadUsers(userFilter.value));
+userFilter.addEventListener('change',()=> loadUsers(userFilter.value,userTypeFilter.value));
+userTypeFilter.addEventListener('change',()=> loadUsers(userFilter.value,userTypeFilter.value));
+
+userTypeFilter.addEventListener('change',updateTableVisibility);
+
 
 const popupBox= document.querySelector('#confirm-prompt');
 popupBox.addEventListener('shown.eins.modal',deleteUserPrompt);
