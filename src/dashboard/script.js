@@ -66,10 +66,6 @@ function loadGraph()
 		bidStatList.push(json["bid-count"]);		
 	    }
 
-	    console.log(freelancerStatList);
-	    console.log(employerStatList);
-	    console.log(postStatList);
-	    console.log(bidStatList);
 
 	    let formatStr;
 	    let period;
