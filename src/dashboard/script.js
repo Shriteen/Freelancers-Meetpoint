@@ -278,6 +278,20 @@ function deleteUser(e)
     e.preventDefault();
 }
 
+function updateTableVisibility()
+{
+    if(userTypeFilter.value==="employer")
+    {
+	document.querySelector('#employer-table').style.display="table";
+	document.querySelector('#freelancer-table').style.display="none";
+    }
+    else
+    {
+	document.querySelector('#employer-table').style.display="none";
+	document.querySelector('#freelancer-table').style.display="table";
+    }
+}
+
 function getDateIntervalList()
 {
     switch(periodSelector.value)
